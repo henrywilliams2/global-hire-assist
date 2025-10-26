@@ -1,138 +1,322 @@
-<!DOCTYPE html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Hire Assist</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Global Hire Assist — Professional Immigration & Placement</title>
+  <meta name="description" content="Global Hire Assist — Visa help, job placement and relocation solutions."/>
+  <meta name="theme-color" content="#004aad" />
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #222;
+    :root{
+      --bg:#000;            /* black background requested */
+      --accent:#004aad;     /* original blue */
+      --muted:#cbd5e1;
+      --card: #0b1220aa;
+      --glass: rgba(255,255,255,0.02);
+      --radius:12px;
+      --maxw:1200px;
     }
-    header {
-      background-color: #004aad;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    nav {
-      background-color: #003580;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    .hero {
-      background: linear-gradient(to right, #004aad, #0073e6);
-      color: white;
-      padding: 5rem 1rem;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-    .btn {
-      background-color: #00a884;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .btn:hover {
-      background-color: #029a77;
-    }
-    footer {
-      background-color: #003580;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-    /* WhatsApp Floating Button */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 28px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      cursor: pointer;
-      text-decoration: none;
-      z-index: 9999;
-      animation: bounce 3s infinite;
-    }
-    .whatsapp-float:hover::after {
-      content: 'Chat with us on WhatsApp';
-      position: absolute;
-      right: 70px;
-      background: #25D366;
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 6px;
-      white-space: nowrap;
-      font-size: 14px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-8px); }
-      60% { transform: translateY(-4px); }
-    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#e6eef8}
+    a{color:inherit}
+    .site{max-width:var(--maxw);margin:0 auto;padding:22px}
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo-placeholder{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#00c6a7);display:flex;align-items:center;justify-content:center;font-weight:800;color:white}
+    .site-title{font-weight:700;font-size:18px}
+    /* menu button on right */
+    .menu-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--muted);cursor:pointer}
+    .menu-btn:hover{color:white;border-color:var(--accent);box-shadow:0 6px 20px rgba(0,74,173,0.12)}
+    /* hero slider */
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;margin-top:10px}
+    .hero-top{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .hero-left{max-width:720px}
+    h1{font-size:34px;margin:6px 0 6px 0;color:#f8fbff;line-height:1.02}
+    .tag{color:var(--muted);margin-bottom:12px}
+    .cta-row{display:flex;gap:10px}
+    .btn{background:var(--accent);color:white;padding:10px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;border:2px solid rgba(0,74,173,0.12);color:var(--accent)}
+    /* slider */
+    .slider{position:relative;border-radius:14px;overflow:hidden;margin-top:10px;border:1px solid rgba(255,255,255,0.04)}
+    .slides{display:flex;transition:transform 0.9s cubic-bezier(.22,.9,.35,1);will-change:transform}
+    .slides img{width:100%;height:420px;object-fit:cover;flex-shrink:0}
+    .slider .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:8px}
+    .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,0.3);cursor:pointer}
+    .dot.active{background:var(--accent);box-shadow:0 6px 14px rgba(0,74,173,0.16)}
+    /* flags row */
+    .flags{display:flex;gap:8px;align-items:center;margin-top:12px}
+    .flag-img{width:22px;height:15px;border-radius:3px;object-fit:cover;border:1px solid rgba(255,255,255,0.04)}
+    /* sections */
+    section.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;margin-top:20px;border:1px solid rgba(255,255,255,0.03)}
+    .section-title{font-size:20px;margin:0 0 8px 0;color:#f0f6ff}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .service-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03)}
+    .service-card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .muted{color:var(--muted)}
+    /* responsive */
+    @media (max-width:980px){ .grid{grid-template-columns:1fr 1fr} .slides img{height:320px} }
+    @media (max-width:640px){ .grid{grid-template-columns:1fr} .slides img{height:220px} h1{font-size:22px} .slides img{object-position:center} .hero-top{flex-direction:column;align-items:flex-start} }
+    /* WhatsApp floating button */
+    .whatsapp-float{position:fixed;right:18px;bottom:18px;background:#25D366;color:white;width:60px;height:60px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:26px;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,0.4);cursor:pointer;animation:bounce 3s infinite}
+    .whatsapp-float:hover::after{content:'Chat with us on WhatsApp';position:absolute;right:76px;padding:8px 12px;background:#111;color:#fff;border-radius:8px;border:1px solid rgba(255,255,255,0.06)}
+    @keyframes bounce{0%,20%,50%,80%,100%{transform:translateY(0)}40%{transform:translateY(-8px)}60%{transform:translateY(-4px)}}
+    /* small UI */
+    .small-flag-row{display:flex;gap:8px;align-items:center;margin-top:8px}
+    /* footer */
+    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Global Hire Assist</h1>
-    <p>Your Trusted Partner in Visa Processing & Global Employment Solutions</p>
-  </header>  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#about">About Us</a>
-    <a href="#contact">Contact</a>
-  </nav>  <section class="hero" id="home">
-    <h1>We Simplify Your Visa Journey</h1>
-    <p>From documentation to embassy booking, we guide you every step of the way. Let’s make your global dream a reality.</p>
-    <a href="https://wa.me/14472763403" class="btn">Get Started</a>
-  </section>  <section id="services">
-    <h2>Our Services</h2>
-    <p>Visa Consultation | Document Assistance | Embassy Interview Booking | Travel Guidance</p>
-  </section>  <section id="about">
-    <h2>About Global Hire Assist</h2>
-    <p>We specialize in connecting talent with global opportunities. Our mission is to simplify international hiring and visa processes with professionalism, transparency, and care.</p>
-  </section>  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>WhatsApp: <a href="https://wa.me/14472763403">+1 447 276 3403</a></p>
-    <p>Email: info@globalhireassist.com</p>
-  </section>  <footer>
-    <p>© 2025 Global Hire Assist. All Rights Reserved.</p>
-  </footer>  <a href="https://wa.me/14472763403" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
+  <div class="site">
+    <!-- header -->
+    <header>
+      <div class="brand">
+        <div class="logo-placeholder" aria-hidden="true">G</div>
+        <div>
+          <div class="site-title">Global Hire Assist</div>
+          <div class="muted" style="font-size:13px">Visa • Jobs • Relocation</div>
+        </div>
+      </div>
+
+      <div>
+        <button class="menu-btn" id="menuToggle" aria-expanded="false">Menu ☰</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero" id="home">
+      <div class="hero-top">
+        <div class="hero-left">
+          <div class="tag">We simplify international hiring & relocation</div>
+          <h1>We Simplify Your Travel Journey ✈️</h1>
+          <p class="muted">From documentation to embassy booking, we guide you every step of the way. Let’s make your global dream a reality.</p>
+          <div class="cta-row">
+            <a class="btn" href="#services">Explore Services</a>
+            <a class="btn ghost" href="https://wa.me/14472763403" target="_blank">Chat Now</a>
+          </div>
+
+          <!-- small flags (Canada, USA, New Zealand, Europe, UK) -->
+          <div class="small-flag-row" aria-hidden="false" style="margin-top:12px">
+            <!-- using FlagCDN - small PNG 20px -->
+            <img class="flag-img" src="https://flagcdn.com/w20/ca.png" alt="Canada">
+            <img class="flag-img" src="https://flagcdn.com/w20/us.png" alt="USA">
+            <img class="flag-img" src="https://flagcdn.com/w20/nz.png" alt="New Zealand">
+            <img class="flag-img" src="https://flagcdn.com/w20/gb.png" alt="United Kingdom">
+            <img class="flag-img" src="https://flagcdn.com/w20/eu.png" alt="Europe">
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider: uses local images slide1..slide4 in images/ folder -->
+      <div class="slider" aria-hidden="false" role="region" aria-label="Homepage slideshow">
+        <div class="slides" id="slides">
+          <img src="images/slide1.jpg" alt="Travel image 1 — airplane over sky">
+          <img src="images/slide2.jpg" alt="Travel image 2 — tropical beach">
+          <img src="images/slide3.jpg" alt="Travel image 3 — city skyline">
+          <img src="images/slide4.jpg" alt="Travel image 4 — mountain landscape">
+        </div>
+        <div class="dots" id="dots"></div>
+      </div>
+    </main>
+
+    <!-- Our Services (cards with images) -->
+    <section id="services" class="card">
+      <h2 class="section-title">Our Services</h2>
+      <p class="muted">Smart, professional services that guide applicants and employers through every step.</p>
+
+      <div class="grid" style="margin-top:12px">
+        <div class="service-card">
+          <img src="images/visa.jpg" alt="Visa Assistance">
+          <h3>Visa Assistance</h3>
+          <p class="muted">Complete documentation, application checks and embassy guidance to improve success rates.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/employment.jpg" alt="Employer Match">
+          <h3>Global Employment</h3>
+          <p class="muted">We connect skilled talent with verified international employers and roles that match skills.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/relocate.jpg" alt="Relocation">
+          <h3>Relocation Support</h3>
+          <p class="muted">Pre-departure briefing, housing tips and arrival assistance for a safe, fast start.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/interview.jpg" alt="Interview Coaching">
+          <h3>Interview Coaching</h3>
+          <p class="muted">CV tailoring, mock interviews and soft-skill coaching so candidates perform confidently.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/postlanding.jpg" alt="Post landing support">
+          <h3>Post Landing Service</h3>
+          <p class="muted">Bank setup, local orientation and settling-in assistance for a smooth transition.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/assessment.jpg" alt="Eligibility">
+          <h3>Eligibility Assessment</h3>
+          <p class="muted">Accurate assessment of documents and eligibility before application to reduce delays.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="card">
+      <h2 class="section-title">About Us</h2>
+      <p class="muted">
+        Global Hire Assist is a specialist immigration and recruitment advisory. We combine deep regulatory knowledge
+        with employer networks and practical relocation services to provide end-to-end solutions for both talents and
+        businesses. Our approach is transparent, outcome-focused and tailored — we guide clients through eligibility checks,
+        application preparation, employer matching, and post-landing support to turn international hiring into a reliable,
+        repeatable process.
+      </p>
+    </section>
+
+    <!-- Visa categories -->
+    <section id="visa-categories" class="card">
+      <h2 class="section-title">Visa Categories</h2>
+      <div style="margin-top:12px" class="grid">
+        <!-- Repeat as needed -->
+        <div class="service-card">
+          <img src="images/visa-skilled.jpg" alt="Skilled Workers">
+          <h3>Skilled Workers</h3>
+          <p class="muted">For qualified professionals and trades — assessment, document guide and employer match.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/visa-business.jpg" alt="Business Immigration">
+          <h3>Business Immigration</h3>
+          <p class="muted">Investment and entrepreneur routes, documentation, and business-plan support.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/visa-greencard.jpg" alt="USA Green Card">
+          <h3>USA Green Card</h3>
+          <p class="muted">Guidance across employment-based and family-based routes and application help.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/visa-student.jpg" alt="Student Visa">
+          <h3>Student Visa</h3>
+          <p class="muted">Application documents, sponsor/education verification and arrival logistics.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/visa-family.jpg" alt="Family Visa">
+          <h3>Family Visa</h3>
+          <p class="muted">Family sponsorship, spouse and dependent visa assistance and paperwork.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/visa-visitor.jpg" alt="Visitor Visa">
+          <h3>Visitor Visa</h3>
+          <p class="muted">Short-stay visitor and transit visa guidance and document preparation.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/visa-workpermit.jpg" alt="Work Permit">
+          <h3>Work Permit</h3>
+          <p class="muted">Employer sponsorship and temporary / seasonal work permit assistance.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/visa-judicial.jpg" alt="Judicial Review">
+          <h3>Judicial Review & Appeals</h3>
+          <p class="muted">Support with appeals and judicial review preparation where applicable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we do -->
+    <section id="whatwedo" class="card">
+      <h2 class="section-title">What We Do</h2>
+      <div class="grid" style="margin-top:12px">
+        <div class="service-card"><h3>Visa Consultation</h3><p class="muted">Case assessment, pathway planning and realistic timelines.</p></div>
+        <div class="service-card"><h3>Application Processing</h3><p class="muted">Document preparation, submission and case tracking support.</p></div>
+        <div class="service-card"><h3>Client Assistance</h3><p class="muted">Client liaison, employer contact and interview scheduling help.</p></div>
+        <div class="service-card"><h3>Eligibility Assessment</h3><p class="muted">Detailed eligibility review to save time and reduce refusal risk.</p></div>
+        <div class="service-card"><h3>Post Landing Service</h3><p class="muted">Settlement, bank setup, housing advice and orientation.</p></div>
+      </div>
+    </section>
+
+    <!-- Solutions by country -->
+    <section id="solutions" class="card">
+      <h2 class="section-title">Solutions by Country</h2>
+      <p class="muted">Tailored solutions and country-specific guidance: Canada, USA, UK, Australia, New Zealand and many EU states. Contact us to see the detailed pathway and requirements for each destination.</p>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs" class="card">
+      <h2 class="section-title">FAQs</h2>
+      <div style="margin-top:10px">
+        <details class="muted"><summary><strong>How long does a visa application take?</strong></summary><div class="muted" style="margin-top:8px">Processing times vary by visa and country — we provide country-specific estimates during consultation.</div></details>
+        <details class="muted"><summary><strong>Do you guarantee visa success?</strong></summary><div class="muted" style="margin-top:8px">We cannot guarantee decisions but we maximize success through careful checks, documentation and compliance.</div></details>
+        <details class="muted"><summary><strong>How do I start?</strong></summary><div class="muted" style="margin-top:8px">Use our quick application or message us on WhatsApp for a free initial eligibility chat.</div></details>
+      </div>
+    </section>
+
+    <!-- Blogs -->
+    <section id="blogs" class="card">
+      <h2 class="section-title">Blog & Resources</h2>
+      <p class="muted">Latest updates, guides and practical tips about immigration, job search and settlement.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="muted">WhatsApp: <a href="https://wa.me/14472763403" target="_blank">+1 447 276 3403</a><br>Email: <a href="mailto:hello@globalhireassist.com">hello@globalhireassist.com</a></p>
+    </section>
+
+    <footer>
+      <div class="muted">© 2025 Global Hire Assist — All rights reserved.</div>
+    </footer>
+  </div>
+
+  <!-- Floating WhatsApp button -->
+  <a class="whatsapp-float" href="https://wa.me/14472763403" target="_blank" aria-label="Chat with us on WhatsApp">
+    <!-- small inline SVG whatsapp icon -->
+    <svg width="26" height="26" viewBox="0 0 448 512" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M380.9 97.1C339-17.7 245.9-2.3 197.7 13.6 140.2 31 77.7 22.6 34.7 61-19.3 106-14.1 188.5 6.1 246c8.6 26.6 24.6 51 44 72.6L41 471l156.5-44.3c30.4 16.6 63.9 25.8 98.6 25.8 15 0 30-1.6 44.7-4.9 52.8-12.8 101.9-46.9 134.7-97.8 40.9-61.6 36.6-141.4 4.2-206.3zM224 96c79.5 0 144 64.5 144 144 0 11.8-1.1 23.4-3.2 34.7l-16.9 2.6-28.6 4.4-22 3.4-20.3 3.1-3 0.5c-6.7.9-12.4-4.8-13.3-11.4l-1.3-10.5-2.3-18.4-3.3-26.3-6-47.9c-1.9-14.9 8.9-28.3 23.8-30.2 3.4-.4 6.8-.6 10.1-.6z"/>
+    </svg>
   </a>
+
+  <script>
+    // Simple slider with dots + autoplay
+    (function(){
+      const slides = document.getElementById('slides');
+      const imgs = slides.querySelectorAll('img');
+      const dotsWrap = document.getElementById('dots');
+      let idx = 0;
+      const total = imgs.length;
+
+      // create dots
+      for(let i=0;i<total;i++){
+        const d = document.createElement('div');
+        d.className = 'dot' + (i===0 ? ' active' : '');
+        d.dataset.index = i;
+        d.addEventListener('click', ()=> { idx = i; go(); resetTimer(); });
+        dotsWrap.appendChild(d);
+      }
+      function go(){
+        slides.style.transform = `translateX(-${idx * 100}%)`;
+        const dots = dotsWrap.querySelectorAll('.dot');
+        dots.forEach((dot,i)=> dot.classList.toggle('active', i===idx));
+      }
+      // autoplay
+      let timer = setInterval(()=> { idx = (idx+1) % total; go(); }, 4500);
+      function resetTimer(){ clearInterval(timer); timer = setInterval(()=> { idx = (idx+1) % total; go(); }, 4500); }
+
+      // menu button (mobile)
+      const menuBtn = document.getElementById('menuToggle');
+      menuBtn.addEventListener('click', ()=>{
+        const open = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!open));
+        menuBtn.textContent = open ? 'Menu ☰' : 'Close ×';
+      });
+    })();
+  </script>
 </body>
 </html>
