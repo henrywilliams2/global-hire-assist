@@ -1,355 +1,138 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Global Hire Assist — Visa help · Job placement · Relocation</title>
-  <meta name="description" content="Global Hire Assist — professional visa guidance, job placement and relocation support for applicants and employers." />
-  <meta name="theme-color" content="#0b6efd" />
-  <!-- Simple icon as SVG fallback -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230b6efd'/><text x='50' y='58' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>G</text></svg>">
-
-  <!-- Minimal, modern CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Hire Assist</title>
   <style>
-    :root{
-      --bg:#f6f8fb;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#0b6efd;
-      --accent-2:#06b6d4;
-      --radius:14px;
-      --glass: rgba(255,255,255,0.7);
-      --shadow: 0 10px 30px rgba(12, 20, 40, 0.08);
-      --maxw:1100px;
-      --gap:18px;
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #222;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,var(--bg),#ffffff);color:#061220;-webkit-font-smoothing:antialiased}
-    a {color:inherit;text-decoration:none}
-    .wrap{max-width:var(--maxw);margin:28px auto;padding:20px;display:grid;grid-template-columns:1fr;gap:var(--gap)}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px;box-shadow:var(--shadow)}
-    nav{display:flex;gap:14px;align-items:center}
-    nav a{font-weight:600;color:var(--muted);padding:8px;border-radius:10px}
-    nav a.cta{background:transparent;border:2px solid rgba(11,110,253,0.12);color:var(--accent)}
-    /* mobile nav */
-    .hamburger{display:none;background:transparent;border:0;padding:8px;border-radius:10px}
-    main.hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start}
-    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    h1{font-size:28px;margin:0;line-height:1.02}
-    p.lead{color:var(--muted);margin-top:10px}
-    .cta-row{display:flex;gap:10px;margin-top:18px}
-    .btn{padding:12px 16px;border-radius:12px;border:0;font-weight:700;cursor:pointer}
-    .btn-primary{background:var(--accent);color:white}
-    .btn-ghost{background:transparent;border:2px solid rgba(11,110,253,0.12);color:var(--accent)}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
-    .feature{padding:12px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid #eef2ff}
-    .small{font-size:13px;color:var(--muted)}
-    /* right column */
-    .aside .form-row{display:flex;flex-direction:column;gap:10px}
-    input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #e6eefb;font-size:14px}
-    input:focus,textarea:focus,select:focus{outline:2px solid rgba(11,110,253,0.12);border-color:var(--accent)}
-    .services{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-    .pricing .item{padding:12px;border-radius:10px;background:#fbfbff;border:1px solid #eef2ff}
-    footer{margin-top:22px;color:var(--muted);text-align:center;padding:12px 0}
-    /* dashboard example */
-    .dashboard{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-    .tile{padding:12px;border-radius:12px;background:linear-gradient(180deg,#fff,#fcfeff);border:1px solid #eef2ff}
-    /* small screens */
-    @media (max-width:980px){
-      main.hero{grid-template-columns:1fr}
-      .features{grid-template-columns:1fr}
-      .services{grid-template-columns:1fr}
-      nav a{display:none}
-      .hamburger{display:inline-flex}
+    header {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
     }
-    /* very small */
-    @media (max-width:420px){
-      .logo{width:48px;height:48px;font-size:18px}
-      h1{font-size:22px}
+    nav {
+      background-color: #003580;
+      padding: 1rem;
+      text-align: center;
     }
-
-    /* Tiny utility */
-    .muted{color:var(--muted)}
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef8ff;color:var(--accent);font-weight:700}
-    .ghost-link{color:var(--accent);font-weight:700}
-    .hidden{display:none}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .hero {
+      background: linear-gradient(to right, #004aad, #0073e6);
+      color: white;
+      padding: 5rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      background-color: #00a884;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn:hover {
+      background-color: #029a77;
+    }
+    footer {
+      background-color: #003580;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 9999;
+      animation: bounce 3s infinite;
+    }
+    .whatsapp-float:hover::after {
+      content: 'Chat with us on WhatsApp';
+      position: absolute;
+      right: 70px;
+      background: #25D366;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-8px); }
+      60% { transform: translateY(-4px); }
+    }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <div class="wrap" id="app">
-    <!-- Header -->
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true">G</div>
-        <div>
-          <div style="font-weight:800">Global Hire Assist</div>
-          <div class="small muted">Visa help · Employer matching · Arrival concierge</div>
-        </div>
-      </div>
-
-      <nav aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-        <a href="#" class="cta" id="openDashboardBtn">Dashboard</a>
-        <button class="hamburger" id="mobileMenuBtn" aria-label="Open menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#0b6efd" stroke-width="2" stroke-linecap="round"/></svg>
-        </button>
-      </nav>
-    </header>
-
-    <!-- HERO -->
-    <main class="hero" role="main" aria-labelledby="heroTitle">
-      <section>
-        <div class="card">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-            <div>
-              <div class="pill">Trusted · Secure · Fast</div>
-              <h1 id="heroTitle">Move your career forward — we handle the visa, placement & arrival.</h1>
-              <p class="lead">Personalized guidance for applicants and employers: document review, employer matching, interview coaching and arrival support — all in one place.</p>
-            </div>
-            <div style="text-align:right">
-              <div class="small muted">Serving applicants globally</div>
-              <div style="font-weight:800;font-size:20px;margin-top:8px">Global Hire Assist</div>
-            </div>
-          </div>
-
-          <div class="cta-row">
-            <button class="btn btn-primary" id="getStartedBtn">Get Started</button>
-            <button class="btn btn-ghost" id="learnMoreBtn">How it works</button>
-          </div>
-
-          <div class="features" aria-hidden="false">
-            <div class="feature">
-              <strong>Visa Guidance</strong>
-              <div class="small muted" style="margin-top:8px">Step-by-step application support & document checklists.</div>
-            </div>
-            <div class="feature">
-              <strong>Employer Match</strong>
-              <div class="small muted" style="margin-top:8px">Connect to vetted employers and verified job openings.</div>
-            </div>
-            <div class="feature">
-              <strong>Arrival Concierge</strong>
-              <div class="small muted" style="margin-top:8px">Housing tips, orientation, and local setup support.</div>
-            </div>
-          </div>
-
-          <!-- Dashboard preview -->
-          <div class="dashboard" aria-hidden="true" id="dashboardPreview" style="margin-top:18px;">
-            <div class="tile">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <div><strong>Applications</strong><div class="small muted">Active & pending</div></div>
-                <div style="font-weight:800">8</div>
-              </div>
-            </div>
-            <div class="tile">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <div><strong>Messages</strong><div class="small muted">Employer replies</div></div>
-                <div style="font-weight:800">3</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Services + Pricing -->
-        <section id="services" style="margin-top:16px;">
-          <div class="card">
-            <h2 style="margin:0 0 8px 0">What we do</h2>
-            <p class="small muted">Comprehensive support from pre-application to post-arrival.</p>
-
-            <div class="services">
-              <div>
-                <h3 style="margin:8px 0 6px 0">For Applicants</h3>
-                <ul class="small muted">
-                  <li>CV tailoring & interview coaching</li>
-                  <li>Document review & visa submission</li>
-                  <li>Relocation planning & arrival guidance</li>
-                </ul>
-              </div>
-              <div>
-                <h3 style="margin:8px 0 6px 0">For Employers</h3>
-                <ul class="small muted">
-                  <li>Candidate sourcing & screening</li>
-                  <li>Work permit consultancy</li>
-                  <li>Onboarding & compliance support</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="pricing" style="margin-top:14px;">
-          <div class="card pricing">
-            <h2 style="margin:0 0 8px 0">Packages (example)</h2>
-            <p class="small muted">Transparent, modular pricing — choose what you need.</p>
-            <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;">
-              <div class="item" style="min-width:160px;">
-                <strong>Starter</strong>
-                <div class="small muted">Document check + checklist</div>
-                <div style="margin-top:8px;font-weight:800">$120</div>
-              </div>
-              <div class="item" style="min-width:160px;">
-                <strong>Standard</strong>
-                <div class="small muted">Starter + employer match</div>
-                <div style="margin-top:8px;font-weight:800">$350</div>
-              </div>
-              <div class="item" style="min-width:160px;">
-                <strong>Premium</strong>
-                <div class="small muted">End-to-end support + arrival concierge</div>
-                <div style="margin-top:8px;font-weight:800">$950</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </section>
-
-      <!-- RIGHT ASIDE: Quick application -->
-      <aside class="aside" aria-labelledby="quickFormTitle">
-        <div class="card" role="complementary">
-          <h3 id="quickFormTitle" style="margin-top:0">Quick Application</h3>
-          <p class="small muted">Tell us a bit about yourself — we'll reply with next steps.</p>
-
-          <form id="quickForm" class="form-row" novalidate>
-            <label class="small">Full name
-              <input type="text" name="name" id="name" placeholder="Jane Doe" required aria-required="true" />
-            </label>
-
-            <label class="small">Email
-              <input type="email" name="email" id="email" placeholder="you@example.com" required />
-            </label>
-
-            <label class="small">Country of interest
-              <select name="country" id="country" required>
-                <option value="">Choose country</option>
-                <option>United States</option>
-                <option>Canada</option>
-                <option>United Kingdom</option>
-                <option>Australia</option>
-                <option>Other</option>
-              </select>
-            </label>
-
-            <label class="small">Role / Notes
-              <textarea name="notes" id="notes" rows="3" placeholder="Brief info about the job or skills"></textarea>
-            </label>
-
-            <button type="submit" class="btn btn-primary">Submit Application</button>
-            <div id="formMessage" class="small muted" style="margin-top:10px;display:none"></div>
-          </form>
-        </div>
-
-        <div style="height:12px"></div>
-
-        <div class="card">
-          <strong>Contact</strong>
-          <p class="small muted" style="margin:8px 0 0 0">Email: <a class="ghost-link" href="mailto:hello@globalhireassist.com">hello@globalhireassist.com</a></p>
-          <p class="small muted">WhatsApp: +1 (555) 123-4567</p>
-          <p class="small muted">Support hours: Mon–Fri, 9:00–18:00 (local)</p>
-        </div>
-      </aside>
-    </main>
-
-    <footer id="contact" role="contentinfo">
-      <div class="small muted">© <strong>Global Hire Assist</strong> — Built with care. <span style="display:inline-block;margin-left:8px">Made to help you relocate smoothly.</span></div>
-    </footer>
-  </div>
-
-  <!-- Minimal JS for interactivity and app-like behavior -->
-  <script>
-    // Mobile menu (simple)
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    mobileMenuBtn && mobileMenuBtn.addEventListener('click', () => {
-      // toggle small nav overlay
-      let navOverlay = document.getElementById('navOverlay');
-      if (!navOverlay) {
-        navOverlay = document.createElement('div');
-        navOverlay.id = 'navOverlay';
-        Object.assign(navOverlay.style, {
-          position:'fixed',left:0,top:0,right:0,bottom:0,background:'rgba(2,6,23,0.6)',display:'flex',justifyContent:'center',alignItems:'center',zIndex:9999
-        });
-        navOverlay.innerHTML = `<div style="background:white;padding:20px;border-radius:12px;min-width:220px;box-shadow:0 12px 30px rgba(2,6,23,0.2)"><a href="#services" style="display:block;margin-bottom:10px;font-weight:700">Services</a><a href="#pricing" style="display:block;margin-bottom:10px;font-weight:700">Pricing</a><a href="#contact" style="display:block;font-weight:700">Contact</a><div style="height:8px"></div><button id="closeNav" style="margin-top:8px;padding:8px 12px;border-radius:10px">Close</button></div>`;
-        document.body.appendChild(navOverlay);
-        document.getElementById('closeNav').addEventListener('click', ()=> navOverlay.remove());
-      } else {
-        navOverlay.remove();
-      }
-    });
-
-    // Quick form handling (demo only — replace with real backend)
-    const quickForm = document.getElementById('quickForm');
-    const formMessage = document.getElementById('formMessage');
-    quickForm && quickForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // simple client-side validation
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const country = document.getElementById('country').value;
-      if (!name || !email || !country) {
-        formMessage.style.display = 'block';
-        formMessage.textContent = 'Please complete the required fields: name, email, and country.';
-        return;
-      }
-      // fake submit
-      formMessage.style.display = 'block';
-      formMessage.textContent = 'Thanks! Your application has been received — we will contact you within 48 hours.';
-      quickForm.reset();
-    });
-
-    // Dashboard preview toggle
-    const openDashboardBtn = document.getElementById('openDashboardBtn');
-    const dashboardPreview = document.getElementById('dashboardPreview');
-    openDashboardBtn && openDashboardBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (!dashboardPreview) return;
-      dashboardPreview.style.display = dashboardPreview.style.display === 'grid' ? 'none' : 'grid';
-      dashboardPreview.setAttribute('aria-hidden', dashboardPreview.style.display === 'none');
-      dashboardPreview.scrollIntoView({behavior:'smooth'});
-    });
-
-    // "Get Started" button scroll to form
-    document.getElementById('getStartedBtn').addEventListener('click', ()=> {
-      document.getElementById('name').focus();
-      document.getElementById('name').scrollIntoView({behavior:'smooth',block:'center'});
-    });
-
-    // PWA install prompt handling (simple)
-    let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      // show custom install button if desired
-      const installBtn = document.createElement('button');
-      installBtn.textContent = 'Install App';
-      installBtn.className = 'btn btn-ghost';
-      installBtn.style.marginLeft = '10px';
-      installBtn.onclick = async () => {
-        deferredPrompt.prompt();
-        const choice = await deferredPrompt.userChoice;
-        deferredPrompt = null;
-        installBtn.remove();
-      };
-      document.querySelector('.pill') && document.querySelector('.pill').insertAdjacentElement('afterend', installBtn);
-    });
-
-    // Accessibility: focus outlines when keyboard used
-    (function(){
-      function handleFirstTab(e) {
-        if (e.key === 'Tab') document.body.classList.add('show-focus');
-        window.removeEventListener('keydown', handleFirstTab);
-      }
-      window.addEventListener('keydown', handleFirstTab);
-    })();
-  </script>
-
-  <!-- Notes:
-       - This is a single-file demo. For production:
-         * Move styles to CSS file, scripts to JS file.
-         * Hook the form to your server / API (do NOT rely on client-side only).
-         * Add proper security, validation, recaptcha and GDPR/consent flows as needed.
-         * Add manifest.json & service-worker.js for full PWA install support.
-  -->
+  <header>
+    <h1>Global Hire Assist</h1>
+    <p>Your Trusted Partner in Visa Processing & Global Employment Solutions</p>
+  </header>  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>  <section class="hero" id="home">
+    <h1>We Simplify Your Visa Journey</h1>
+    <p>From documentation to embassy booking, we guide you every step of the way. Let’s make your global dream a reality.</p>
+    <a href="https://wa.me/14472763403" class="btn">Get Started</a>
+  </section>  <section id="services">
+    <h2>Our Services</h2>
+    <p>Visa Consultation | Document Assistance | Embassy Interview Booking | Travel Guidance</p>
+  </section>  <section id="about">
+    <h2>About Global Hire Assist</h2>
+    <p>We specialize in connecting talent with global opportunities. Our mission is to simplify international hiring and visa processes with professionalism, transparency, and care.</p>
+  </section>  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>WhatsApp: <a href="https://wa.me/14472763403">+1 447 276 3403</a></p>
+    <p>Email: info@globalhireassist.com</p>
+  </section>  <footer>
+    <p>© 2025 Global Hire Assist. All Rights Reserved.</p>
+  </footer>  <a href="https://wa.me/14472763403" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </body>
 </html>
