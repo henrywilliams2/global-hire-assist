@@ -1,636 +1,511 @@
 <!doctype html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Global Hire Assist — Your Trusted Visa Partner</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Global Hire Assist — Your Trusted Visa Partner</title>
+  <meta name="description" content="Global Hire Assist — fast, professional visa help for work, study, tourist & sponsorship visas." />
+  <style>
+    :root{
+      --navy:#001f3f; /* primary site background */
+      --accent:#00b894;
+      --muted:#d1d5db;
+      --card:#072235;
+      --white:#ffffff;
+      --glass: rgba(255,255,255,0.06);
+    }
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--muted);background:var(--navy);}
+    .container{max-width:1100px;margin:0 auto;padding:28px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .brand-mark{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#1398d6);display:flex;align-items:center;justify-content:center;color:#001f3f;font-weight:700}
+    h1,h2,h3{color:var(--white);margin:0}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:26px}
+    .hero-card{background:var(--card);padding:28px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+    .cta{display:inline-block;padding:12px 18px;background:var(--accent);color:#001f3f;border-radius:8px;font-weight:600;border:none;cursor:pointer}
+    .services{display:flex;gap:14px;margin-top:18px}
+    .service{flex:1;background:rgba(255,255,255,0.03);padding:16px;border-radius:10px}
+    .grid-4{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}/* Visa type blocks with 4k background images */
+.visa-block{position:relative;border-radius:10px;overflow:hidden;min-height:180px;color:#fff}
+.visa-block .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.35),rgba(0,0,0,0.55));padding:18px;display:flex;flex-direction:column;justify-content:flex-end}
+.visa-block .title{font-size:20px;margin-bottom:8px}
+.apply-btn{padding:10px 14px;background:var(--accent);color:#001f3f;border-radius:8px;border:none;cursor:pointer}
 
-<!-- PayPal SDK (sandbox client-id=sb). Replace client-id with your production key later. -->
-<script src="https://www.paypal.com/sdk/js?client-id=sb&components=buttons,funding-eligibility"></script>
+/* form styles */
+form label{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white);box-sizing:border-box}
+.small{font-size:13px;color:#9fb0bf}
 
-<style>
-  :root{
-    --navy:#001f3f;
-    --accent:#0ea5a5;
-    --card-bg:#0b1220;
-    --muted:#bfc6d1;
-    --white:#ffffff;
-  }
-  html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-  body{
-    background: linear-gradient(180deg,var(--navy) 0%, #021427 100%);
-    color:var(--muted);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-  }
-  header{
-    background:#000;
-    color:var(--white);
-    padding:14px 18px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-    position:sticky; top:0; z-index:40;
-  }
-  header .brand{display:flex;gap:12px;align-items:center}
-  .logo{
-    width:58px;height:58px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#0b84a5);
-    display:flex;align-items:center;justify-content:center;font-weight:700;color:#001f3f;
-    font-size:18px;
-  }
-  nav a{color:var(--muted);text-decoration:none;margin-left:12px}
-  .container{max-width:1100px;margin:36px auto;padding:0 18px;}
-  .hero{
-    display:grid;grid-template-columns: 1fr 420px;gap:28px;align-items:center;
-    margin-bottom:28px;
-  }
-  .hero-card{
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    padding:26px;border-radius:12px;box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    color:var(--white);
-  }
-  h1{margin:0 0 8px 0;font-size:28px;color:var(--white);}
-  p.lead{margin:0;color:var(--muted);line-height:1.5}
-  .cta{margin-top:16px}
-  .btn{
-    display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);
-    color:#001f3f;text-decoration:none;font-weight:700;cursor:pointer;border:none;
-  }
-  .services{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-  .service{background:#031b2a;padding:12px;border-radius:10px;min-width:140px;text-align:center}
-  .small{font-size:13px;color:var(--muted);}
-  /* form styles */
-  .card{background:var(--card-bg);padding:18px;border-radius:12px;color:var(--muted);box-shadow:0 6px 25px rgba(0,0,0,0.5)}
-  form .row{display:flex;gap:10px}
-  label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
-  input[type="text"], input[type="email"], input[type="tel"], select, textarea{
-    width:100%;padding:10px;border-radius:8px;border:none;background:#071126;color:var(--muted);
-    box-sizing:border-box;font-size:14px;
-  }
-  textarea{min-height:110px;resize:vertical}
-  .file-input{padding:8px;background:#071126;border-radius:8px}
-  .muted-note{font-size:12px;color:#9fb0bd;margin-top:6px;}
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .testimonials{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-  .t{background:#071528;padding:12px;border-radius:8px;min-width:180px}
-  footer{background:#000;padding:18px;color:var(--muted);margin-top:28px;border-top:1px solid #071018;}
-  .whatsapp{
-    position:fixed;right:18px;bottom:18px;background:#25d366;color:#001b15;border-radius:50%;width:60px;height:60px;
-    display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 6px 20px rgba(0,0,0,0.4);z-index:60;
-  }
-  /* admin modal / dashboard */
-  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:80}
-  .modal.active{display:flex}
-  .modal-card{width:920px;max-width:96%;background:#05111a;padding:18px;border-radius:12px;color:var(--muted)}
-  .admin-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-  table{width:100%;border-collapse:collapse;color:var(--muted);font-size:13px}
-  th,td{padding:8px;border-bottom:1px dashed #072129;text-align:left}
-  .status-btn{padding:6px 8px;border-radius:10px;border:none;cursor:pointer;background:#09323b;color:var(--muted)}
-  .status-select{padding:8px;border-radius:8px;background:#071126;border:none;color:var(--muted)}
-  .btn-ghost{background:transparent;border:1px solid #0b2b33;color:var(--muted);padding:8px 10px;border-radius:8px}
-  .admin-actions{display:flex;gap:8px;flex-wrap:wrap}
-  .export{margin-top:12px}
-  /* responsive */
-  @media (max-width:920px){
-    .hero{grid-template-columns:1fr}
-  }
-</style>
+/* admin panel */
+#adminPanel{display:none;background:#000;color:var(--muted);padding:20px;border-radius:8px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-bottom:1px solid rgba(255,255,255,0.04);padding:10px;text-align:left}
+.badge{display:inline-block;padding:6px 8px;border-radius:8px}
+.status-pending{background:#f39c12;color:#000}
+.status-review{background:#3498db;color:#000}
+.status-approved{background:#2ecc71;color:#000}
+.status-rejected{background:#e74c3c;color:#000}
+
+footer{margin-top:36px;text-align:center;color:#9fb0bf}
+
+/* small screens */
+@media(max-width:900px){.hero{grid-template-columns:1fr}.container{padding:18px}}
+
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="brand">
-    <div class="logo">GHA</div>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="brand-mark">G</div>
+        <div>
+          <div style="font-weight:700;color:var(--white)">Global Hire Assist</div>
+          <div style="font-size:13px;color:var(--muted)">Your Trusted Visa Partner</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#apply">Apply</a>
+        <a href="#payments">Payments</a>
+        <a href="#contact">Contact</a>
+        <a href="#admin" id="adminLink">Consultant Panel</a>
+      </nav>
+    </header><main>
+  <section class="hero" id="home">
     <div>
-      <div style="font-weight:700;color:var(--white)">Global Hire Assist</div>
-      <div style="font-size:12px;color:var(--muted)">Your Trusted Visa Partner</div>
-    </div>
-  </div>
+      <h1>Fast. Professional. Real.</h1>
+      <p style="color:var(--muted);margin-top:12px">We help individuals and families with Work, Study, Tourist visas and Sponsorships. Start your application and let our consultants guide you every step of the way.</p>
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#apply" class="start-application">Start Application</a>
-    <a href="#payments">Pay for Visa</a>
-    <a href="#" id="open-admin">Consultant Panel</a>
-  </nav>
-</header>
-
-<!-- WhatsApp floating button -->
-<a class="whatsapp" id="whatsappBtn" title="Chat on WhatsApp" href="https://wa.me/14472763403?text=Hello%20Global%20Hire%20Assist" target="_blank" rel="noopener noreferrer">
-  <!-- WhatsApp icon (simple) -->
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:block">
-    <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.372 0 .001 5.372 0 12c0 2.11.558 4.18 1.62 6.03L0 24l6.23-1.63A11.94 11.94 0 0 0 12 24c6.628 0 12-5.372 12-12 0-3.2-1.25-6.19-3.48-8.52Z" fill="#fff" opacity="0.08"/>
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.966-.273-.099-.472-.149-.672.149-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.477-.885-.79-1.48-1.763-1.653-2.06-.173-.297-.018-.458.13-.606.133-.132.297-.347.446-.52.149-.173.198-.298.297-.497.099-.198.05-.372-.025-.52-.074-.149-.672-1.62-.92-2.22-.242-.584-.487-.504-.672-.513l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.015-1.04 2.47 0 1.456 1.064 2.868 1.213 3.069.149.198 2.095 3.2 5.077 4.487 2.982 1.286 2.982.858 3.518.804.536-.055 1.758-.718 2.006-1.411.248-.692.248-1.286.173-1.411-.074-.124-.272-.198-.57-.347Z" fill="#25D366"/>
-  </svg>
-</a>
-
-<main class="container">
-  <section class="hero" aria-label="hero">
-    <div class="hero-card card">
-      <h1>Fast, Reliable Visa Help</h1>
-      <p class="lead">Global Hire Assist helps you navigate Work, Study, Tourist visas and Sponsorships. Start your application now and our consultants will walk you through the next steps.</p>
-
-      <div class="services" id="services">
-        <div class="service"><strong>Work Visa</strong><div class="small">Skilled & employer-sponsored</div></div>
-        <div class="service"><strong>Study Visa</strong><div class="small">Student & university guidance</div></div>
-        <div class="service"><strong>Tourist Visa</strong><div class="small">Quick & easy processing</div></div>
-        <div class="service"><strong>Sponsorships</strong><div class="small">Family & employer sponsorship</div></div>
+      <div style="margin-top:18px">
+        <button class="cta" id="startApply">Start Application</button>
       </div>
 
-      <div style="margin-top:18px;display:flex;gap:8px;align-items:center">
-        <button class="btn start-application" onclick="document.getElementById('applyForm').scrollIntoView({behavior:'smooth'})">Start Application</button>
-        <a class="btn-ghost" href="#payments" style="color:var(--muted)">Pay for Visa</a>
-      </div>
-
-      <div style="margin-top:14px">
-        <div class="small">Trusted by applicants worldwide</div>
-        <div class="testimonials" style="margin-top:10px">
-          <div class="t">"Excellent guidance — got my work visa in weeks." — A. M.</div>
-          <div class="t">"Professional and transparent." — N. K.</div>
-          <div class="t">"Saved me time & money." — S. R.</div>
+      <div class="services">
+        <div class="service">
+          <strong>Work Visa</strong>
+          <div class="small">Employer matching, documentation, interview prep</div>
+        </div>
+        <div class="service">
+          <strong>Study Visa</strong>
+          <div class="small">College admissions support & visa processing</div>
+        </div>
+        <div class="service">
+          <strong>Tourist Visa</strong>
+          <div class="small">Fast tourist paperwork & travel guidance</div>
+        </div>
+        <div class="service">
+          <strong>Sponsorships</strong>
+          <div class="small">Family & employer sponsorship assistance</div>
         </div>
       </div>
+
     </div>
 
-    <!-- Right column: 4K travel image carousel -->
-    <div class="card" style="padding:8px;border-radius:12px;">
-      <div id="carousel" style="border-radius:8px;overflow:hidden;position:relative">
-        <!-- 4k images from Unsplash (free to use). Replace with your own 4K images in production -->
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2560&fm=jpg&crop=entropy&cs=tinysrgb" alt="Travel 1" style="width:100%;height:320px;object-fit:cover;display:block" id="carouselImg">
-        <div style="position:absolute;left:14px;bottom:14px;background:rgba(0,0,0,0.45);padding:8px;border-radius:8px">
-          <div style="font-weight:700;color:#fff">Dream. Apply. Travel.</div>
-          <div style="font-size:12px;color:#d6e6ea">High-resolution travel inspiration</div>
-        </div>
-      </div>
-      <div style="display:flex;gap:8px;margin-top:8px;justify-content:center">
-        <button class="btn-ghost" onclick="prevImage()">Prev</button>
-        <button class="btn-ghost" onclick="nextImage()">Next</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Application Form -->
-  <section class="card" id="applyForm" style="margin-bottom:18px">
-    <h3 style="color:var(--white)">Visa Application Form</h3>
-    <p class="small">Fill the form below — you'll receive a reference number immediately.</p>
-
-    <form id="visaForm" onsubmit="handleSubmit(event)">
-      <div class="grid-2" style="margin-top:12px">
-        <div>
-          <label for="name">Full Name</label>
-          <input id="name" required type="text" placeholder="Jane Doe" />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" required type="email" placeholder="you@example.com" />
-        </div>
-      </div>
-
-      <div class="grid-2" style="margin-top:12px">
-        <div>
-          <label for="phone">Phone</label>
-          <input id="phone" required type="tel" placeholder="+1 555 555 5555" />
-        </div>
-        <div>
-          <label for="residence">Country of Residence</label>
-          <input id="residence" required type="text" placeholder="Country" />
-        </div>
-      </div>
-
-      <div class="grid-2" style="margin-top:12px">
-        <div>
-          <label for="destination">Destination Country</label>
-          <input id="destination" required type="text" placeholder="Destination Country" />
-        </div>
-        <div>
-          <label for="visaType">Visa Type</label>
-          <select id="visaType" required>
-            <option value="">-- Select --</option>
-            <option>Work Visa</option>
-            <option>Study Visa</option>
-            <option>Tourist Visa</option>
-            <option>Sponsorship</option>
-            <option>Other</option>
-          </select>
-        </div>
-      </div>
+    <aside class="hero-card">
+      <h3 style="margin-bottom:6px">Apply Today</h3>
+      <p class="small">Fill the form & upload passport/supporting docs. We'll assign a reference number and notify you.</p>
 
       <div style="margin-top:12px">
-        <label for="message">Message / Additional Info</label>
-        <textarea id="message" placeholder="Tell us about your case"></textarea>
+        <button class="cta" id="scrollToForm">Go to Form</button>
       </div>
 
-      <div style="margin-top:12px">
-        <label>Upload passport or supporting documents (PDF, JPG, PNG)</label>
-        <div class="file-input">
-          <input id="fileUpload" type="file" accept=".pdf,image/*" />
+      <hr style="border:0;border-top:1px solid rgba(255,255,255,0.04);margin:18px 0">
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="flex:1">
+          <div style="font-size:13px;color:var(--muted)">WhatsApp</div>
+          <div style="font-weight:700">+1 447-276-3403</div>
         </div>
-        <div class="muted-note">Max file size in this demo is not enforced; to store files long-term use a server or cloud storage (S3/Google Drive).</div>
+        <div>
+          <button class="apply-btn" id="waBtn">Chat on WhatsApp</button>
+        </div>
       </div>
-
-      <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
-        <button class="btn" type="submit">Submit Application</button>
-        <div id="refBox" style="font-size:13px;color:var(--muted)"></div>
-      </div>
-    </form>
+    </aside>
   </section>
 
-  <!-- Payment Section -->
-  <section class="card" id="payments" style="margin-bottom:18px">
-    <h3 style="color:var(--white)">Pay for Visa</h3>
-    <p class="small">Choose PayPal checkout to pay with PayPal, debit/credit cards (Visa, Mastercard). Or follow manual payment instructions for Western Union.</p>
-
-    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;align-items:flex-start">
-      <div style="min-width:320px;flex:1">
-        <div style="background:#071826;padding:12px;border-radius:10px">
-          <h4 style="margin:0;color:var(--white)">Pay via PayPal (Sandbox)</h4>
-          <div id="paypal-button-container" style="margin-top:12px"></div>
-          <div class="small muted-note">PayPal sandbox is enabled for demo. Replace the PayPal client-id with your account key in production.</div>
+  <!-- Visa Type blocks with 4K background placeholders -->
+  <section style="margin-top:20px">
+    <div class="grid-4">
+      <div class="visa-block" style="background-image:url('https://images.unsplash.com/photo-1502920917128-1aa500764b0f?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center">
+        <div class="overlay">
+          <div class="title">Work Visa</div>
+          <div>Skilled professionals & employer-sponsored programs</div>
+          <div style="margin-top:10px"><button class="apply-btn" data-type="Work">Apply</button></div>
         </div>
       </div>
 
-      <div style="min-width:320px;flex:1">
-        <div style="background:#071826;padding:12px;border-radius:10px">
-          <h4 style="margin:0;color:var(--white)">Manual Payments</h4>
-          <div style="margin-top:8px">
-            <strong>Western Union</strong>
-            <div class="small">Send to: Global Hire Assist — Name: Global Hire Assist. Please message us the MTCN code and payer name to <a href="mailto:henywilliams@myyahoo.com" style="color:var(--accent)">henywilliams@myyahoo.com</a>.</div>
-          </div>
-          <div style="margin-top:8px">
-            <strong>Direct bank / Card</strong>
-            <div class="small">We accept debit/credit via PayPal card checkout above.</div>
-          </div>
+      <div class="visa-block" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center">
+        <div class="overlay">
+          <div class="title">Study Visa</div>
+          <div>University & college application support</div>
+          <div style="margin-top:10px"><button class="apply-btn" data-type="Study">Apply</button></div>
+        </div>
+      </div>
+
+      <div class="visa-block" style="background-image:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center">
+        <div class="overlay">
+          <div class="title">Tourist Visa</div>
+          <div>Short stays & visitor guidance</div>
+          <div style="margin-top:10px"><button class="apply-btn" data-type="Tourist">Apply</button></div>
+        </div>
+      </div>
+
+      <div class="visa-block" style="background-image:url('https://images.unsplash.com/photo-1526948531390-3fdf0cf4c5f6?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center">
+        <div class="overlay">
+          <div class="title">Sponsorship</div>
+          <div>Family & employer sponsorship pathways</div>
+          <div style="margin-top:10px"><button class="apply-btn" data-type="Sponsorship">Apply</button></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Quick contact / Chat -->
-  <section class="card" style="margin-bottom:18px">
-    <h3 style="color:var(--white)">Quick Contact</h3>
-    <p class="small">Got a quick question? Message us and get an auto-reply.</p>
+  <!-- Application form -->
+  <section id="apply" style="margin-top:22px">
+    <div class="hero-card">
+      <h2>Visa Application Form</h2>
+      <p class="small">Complete the form below and attach a passport page or supporting documents (PDF/JPEG). We will generate a reference number instantly.</p>
 
-    <form id="contactForm" onsubmit="handleContact(event)" style="margin-top:10px">
-      <div class="grid-2">
-        <div>
-          <label for="cname">Name</label>
-          <input id="cname" required type="text" />
+      <form id="visaForm" enctype="multipart/form-data" autocomplete="off">
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" required />
+
+        <label for="residence">Country of Residence</label>
+        <input id="residence" name="residence" type="text" required />
+
+        <label for="destination">Destination Country</label>
+        <input id="destination" name="destination" type="text" required />
+
+        <label for="visaType">Visa Type</label>
+        <select id="visaType" name="visaType" required>
+          <option value="Work">Work</option>
+          <option value="Study">Study</option>
+          <option value="Tourist">Tourist</option>
+          <option value="Sponsorship">Sponsorship</option>
+        </select>
+
+        <label for="message">Message / Notes</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <label for="file">Upload passport / supporting docs (PDF or JPEG)</label>
+        <input id="file" name="file" type="file" accept="application/pdf,image/*" />
+
+        <div style="margin-top:12px;display:flex;gap:12px;align-items:center">
+          <button class="cta" type="submit">Submit Application</button>
+          <div id="formStatus" class="small"></div>
         </div>
-        <div>
-          <label for="cphone">Phone</label>
-          <input id="cphone" type="tel" />
+      </form>
+
+      <div style="margin-top:12px;font-size:13px;color:#9fb0bf">Note: Uploaded files are stored locally in this demo. To save to Google Sheets or a secure admin dashboard, follow the instructions included in the comments at the top of the file.</div>
+    </div>
+  </section>
+
+  <!-- Payments -->
+  <section id="payments" style="margin-top:18px">
+    <div class="hero-card">
+      <h2>Payments & Fees</h2>
+      <p class="small">Select a method or follow the instructions. Replace the placeholder client IDs and endpoints with your real merchant credentials to accept live payments.</p>
+
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <strong>PayPal (recommended)</strong>
+          <p class="small">Click to pay via PayPal or card. (Requires PayPal client-id in the script below.)</p>
+          <div id="paypal-button-container"></div>
+        </div>
+
+        <div style="flex:1;min-width:220px">
+          <strong>Card (Visa / MasterCard / Debit)</strong>
+          <p class="small">You can integrate Stripe Checkout or your chosen gateway. Use the "Pay Now" button to test the flow in demo mode.</p>
+          <button class="apply-btn" id="payNow">Pay Now (Demo)</button>
+        </div>
+
+        <div style="flex:1;min-width:220px">
+          <strong>Western Union / Manual</strong>
+          <p class="small">Instructions: Send funds to the company account as instructed after contacting our office. Provide transaction ID in the Admin Panel when you pay manually.</p>
         </div>
       </div>
-      <div style="margin-top:10px">
+    </div>
+  </section>
+
+  <!-- Chat / Contact -->
+  <section id="contact" style="margin-top:18px">
+    <div class="hero-card">
+      <h2>Contact / Quick Inquiry</h2>
+      <p class="small">Quick message or use the WhatsApp button for immediate chat. Auto-reply will be shown once a message is sent.</p>
+
+      <form id="contactForm">
+        <label for="cname">Name</label>
+        <input id="cname" name="cname" type="text" required />
         <label for="cmsg">Message</label>
-        <textarea id="cmsg" placeholder="Your question"></textarea>
+        <textarea id="cmsg" name="cmsg" rows="3" required></textarea>
+        <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+          <button class="cta" type="submit">Send</button>
+          <div id="contactReply" class="small"></div>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Admin Panel -->
+  <section id="admin" style="margin-top:22px">
+    <div id="adminPanel" class="hero-card">
+      <h2>Consultant Panel</h2>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:10px">Admin: henywilliams@myyahoo.com</div>
+
+      <div id="adminContent">
+        <div style="margin-bottom:10px">
+          <button id="logoutAdmin" class="apply-btn">Logout</button>
+        </div>
+
+        <table class="table" id="appsTable">
+          <thead>
+            <tr><th>Ref</th><th>Name</th><th>Email</th><th>Visa</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <div style="margin-top:12px;color:var(--muted);font-size:13px">Click an application to view details and mark status. You may also paste a payment transaction ID to mark "In Process".</div>
       </div>
-      <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
-        <button class="btn" type="submit">Send Message</button>
-        <a class="btn" href="https://wa.me/14472763403?text=Hello%20Global%20Hire%20Assist" style="background:#25D366">WhatsApp</a>
-      </div>
-    </form>
+    </div>
   </section>
 
   <footer>
-    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
-      <div>
-        <div style="font-weight:700;color:var(--white)">Global Hire Assist</div>
-        <div class="small">Your Trusted Visa Partner — Email: <a href="mailto:henywilliams@myyahoo.com" style="color:var(--muted)">henywilliams@myyahoo.com</a></div>
-      </div>
-      <div class="small">© <span id="yr"></span> Global Hire Assist — All rights reserved.</div>
-    </div>
+    <div>© Global Hire Assist</div>
+    <div style="font-size:13px;color:var(--muted)">Built as an MVP — replace the demo endpoints with your production services to go live.</div>
   </footer>
+
 </main>
 
-<!-- Admin modal (Consultant Panel) -->
-<div class="modal" id="adminModal" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="modal-card">
-    <div class="admin-head">
-      <div>
-        <div style="font-weight:700;color:var(--white)">Consultant Panel</div>
-        <div class="small">Admin: henywilliams@myyahoo.com</div>
+  </div>  <!-- Admin login modal (simple) -->  <div id="adminLoginModal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6)">
+    <div style="background:#000;padding:20px;border-radius:8px;width:360px;color:var(--muted)">
+      <h3 style="color:var(--white)">Admin Login</h3>
+      <div style="font-size:13px;margin-bottom:10px">Enter password to access consultant panel.</div>
+      <input id="adminPassword" type="password" style="width:100%;padding:10px;border-radius:6px;background:#071018;border:1px solid rgba(255,255,255,0.03);color:var(--white)" />
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+        <button id="closeAdminLogin" class="small">Close</button>
+        <button id="doAdminLogin" class="apply-btn">Login</button>
       </div>
-      <div>
-        <button class="btn-ghost" id="closeAdmin">Close</button>
-      </div>
+      <div id="adminLoginMsg" style="margin-top:8px;font-size:13px;color:#f39c12"></div>
     </div>
-
-    <div id="adminLoginArea">
-      <p class="small">Please login with your admin password to view applications.</p>
-      <div style="display:flex;gap:8px;align-items:center">
-        <input id="adminEmail" type="text" readonly value="henywilliams@myyahoo.com" style="padding:8px;border-radius:8px;border:none;background:#071126;color:var(--muted)" />
-        <input id="adminPassword" type="password" placeholder="Admin password" style="padding:8px;border-radius:8px;border:none;background:#071126;color:var(--muted)" />
-        <button class="btn" id="adminLoginBtn">Login</button>
-      </div>
-      <div id="adminMsg" style="margin-top:8px;color:#f88;font-size:13px"></div>
-    </div>
-
-    <div id="dashboardArea" style="display:none">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div class="small">Logged in as: <strong style="color:var(--white)">henywilliams@myyahoo.com</strong></div>
-        <div class="admin-actions">
-          <button class="btn-ghost" id="exportCsv">Export CSV</button>
-          <button class="btn-ghost" id="logoutBtn">Logout</button>
-        </div>
-      </div>
-
-      <div style="margin-top:12px;overflow:auto;max-height:440px">
-        <table id="appsTable" role="grid">
-          <thead>
-            <tr><th>Ref</th><th>Name</th><th>Email</th><th>Phone</th><th>Destination</th><th>Visa Type</th><th>Status</th><th>Actions</th></tr>
-          </thead>
-          <tbody id="appsTbody"></tbody>
-        </table>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<script>
-/* ---------- Configuration / constants (change for production) ---------- */
-const ADMIN_EMAIL = 'henywilliams@myyahoo.com';
-const ADMIN_PASSWORD = '40318055'; // as requested (INSECURE to store client-side in production)
-const WHATSAPP_NUMBER = '+14472763403';
-
-/* ---------- Page helpers ---------- */
-document.getElementById('yr').textContent = new Date().getFullYear();
-
-/* Carousel images (4K ready). Replace URLs with your own images if you have them */
-const images = [
-  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2560&fm=jpg&crop=entropy&cs=tinysrgb",
-  "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2560&fm=jpg&crop=entropy&cs=tinysrgb",
-  "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2560&fm=jpg&crop=entropy&cs=tinysrgb"
-];
-let carouselIndex = 0;
-const carouselImg = document.getElementById('carouselImg');
-function nextImage(){ carouselIndex=(carouselIndex+1)%images.length; carouselImg.src=images[carouselIndex]; }
-function prevImage(){ carouselIndex=(carouselIndex-1+images.length)%images.length; carouselImg.src=images[carouselIndex]; }
-setInterval(nextImage,7000);
-
-/* ---------- Form handling (stores to localStorage in this demo) ---------- */
-function generateRef(){
-  const t = new Date();
-  const pad = (n)=>String(n).padStart(2,'0');
-  const dt = `${t.getFullYear()}${pad(t.getMonth()+1)}${pad(t.getDate())}${pad(t.getHours())}${pad(t.getMinutes())}${pad(t.getSeconds())}`;
-  const rand = Math.floor(1000 + Math.random()*9000);
-  return `GHA-${dt}-${rand}`;
-}
-
-function saveApplication(app){
-  const key = 'gha_applications_v1';
-  const existing = JSON.parse(localStorage.getItem(key) || '[]');
-  existing.unshift(app);
-  localStorage.setItem(key, JSON.stringify(existing));
-}
-
-/* optional: POST to Google Apps Script / Google Sheet:
-   Replace 'YOUR_GOOGLE_APPS_SCRIPT_URL' with your Apps Script endpoint to push data to Google Sheets.
-   Example:
-   fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {method:'POST', body: JSON.stringify(app)})
-*/
-async function handleSubmit(e){
-  e.preventDefault();
-  const app = {
-    ref: generateRef(),
-    name: document.getElementById('name').value.trim(),
-    email: document.getElementById('email').value.trim(),
-    phone: document.getElementById('phone').value.trim(),
-    residence: document.getElementById('residence').value.trim(),
-    destination: document.getElementById('destination').value.trim(),
-    visaType: document.getElementById('visaType').value,
-    message: document.getElementById('message').value.trim(),
-    status: 'Pending',
-    createdAt: new Date().toISOString()
-  };
-
-  // handle file (store as dataURL small demo)
-  const f = document.getElementById('fileUpload').files[0];
-  if(f){
-    const maxSizeMB = 10;
-    if(f.size > maxSizeMB*1024*1024){
-      alert('File too large for demo. Use a server/cloud for large files.');
-      return;
-    }
-    app.fileName = f.name;
-    app.fileType = f.type;
-    app.fileData = await fileToDataURL(f);
-  }
-
-  saveApplication(app);
-  // show ref to user
-  document.getElementById('refBox').innerHTML = `<strong>Reference:</strong> ${app.ref} — we will contact you at ${app.email || app.phone}`;
-  // auto-reply email (mailto) and auto WhatsApp prefill (client-side only)
-  // Optionally you can call server/email service here.
-  setTimeout(()=>document.getElementById('refBox').scrollIntoView({behavior:'smooth'}),250);
-
-  // reset form (except file)
-  document.getElementById('visaForm').reset();
-  // update admin table if open
-  renderAdminTable();
-}
-
-/* helper to read files to dataURL */
-function fileToDataURL(file){
-  return new Promise((res,rej)=>{
-    const r = new FileReader();
-    r.onload = ()=>res(r.result);
-    r.onerror = rej;
-    r.readAsDataURL(file);
-  });
-}
-
-/* Contact quick form (auto-reply behavior) */
-function handleContact(e){
-  e.preventDefault();
-  const name = document.getElementById('cname').value.trim();
-  const phone = document.getElementById('cphone').value.trim();
-  const msg = document.getElementById('cmsg').value.trim();
-  // Auto reply: either email or WhatsApp
-  alert("Thank you for contacting Global Hire Assist. Our agent will reach out shortly.");
-  // Optionally open WhatsApp for the admin
-  const waLink = `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g,'')}?text=${encodeURIComponent(`New contact from ${name} (${phone}): ${msg}`)}`;
-  // open in new tab (commented out: admin may prefer to receive this)
-  // window.open(waLink,'_blank');
-  document.getElementById('contactForm').reset();
-}
-
-/* ---------- Admin panel ---------- */
-const adminModal = document.getElementById('adminModal');
-document.getElementById('open-admin').addEventListener('click', (ev)=>{ ev.preventDefault(); openAdmin(); });
-document.getElementById('closeAdmin').addEventListener('click', ()=>{ adminModal.classList.remove('active'); });
-function openAdmin(){ adminModal.classList.add('active'); document.getElementById('adminPassword').value=''; document.getElementById('adminMsg').textContent=''; showLogin(); }
-
-function showLogin(){document.getElementById('adminLoginArea').style.display='block'; document.getElementById('dashboardArea').style.display='none'; document.getElementById('adminModal').setAttribute('aria-hidden','false');}
-
-function showDashboard(){document.getElementById('adminLoginArea').style.display='none'; document.getElementById('dashboardArea').style.display='block'; document.getElementById('adminModal').setAttribute('aria-hidden','false'); renderAdminTable();}
-
-document.getElementById('adminLoginBtn').addEventListener('click', ()=>{
-  const pass = document.getElementById('adminPassword').value;
-  const email = document.getElementById('adminEmail').value;
-  if(email !== ADMIN_EMAIL){
-    document.getElementById('adminMsg').textContent = 'Incorrect admin email.';
-    return;
-  }
-  if(pass === ADMIN_PASSWORD){
-    document.getElementById('adminMsg').textContent = '';
-    showDashboard();
-  } else {
-    document.getElementById('adminMsg').textContent = 'Invalid password.';
-  }
-});
-document.getElementById('logoutBtn').addEventListener('click', showLogin);
-
-function getApplications(){
-  return JSON.parse(localStorage.getItem('gha_applications_v1') || '[]');
-}
-
-function renderAdminTable(){
-  const apps = getApplications();
-  const tbody = document.getElementById('appsTbody');
-  tbody.innerHTML = '';
-  if(!apps.length){
-    tbody.innerHTML = '<tr><td colspan="8" style="padding:12px;color:#9fb0bd">No applications yet.</td></tr>';
-    return;
-  }
-  for(const a of apps){
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td style="width:115px">${a.ref}</td>
-      <td>${a.name||''}</td>
-      <td><a href="mailto:${a.email}" style="color:var(--accent)">${a.email||''}</a></td>
-      <td>${a.phone||''}</td>
-      <td>${a.destination||''}</td>
-      <td>${a.visaType||''}</td>
-      <td>
-        <select class="status-select" data-ref="${a.ref}">
-          <option ${a.status==='Pending'?'selected':''}>Pending</option>
-          <option ${a.status==='Under Review'?'selected':''}>Under Review</option>
-          <option ${a.status==='In Process'?'selected':''}>In Process</option>
-          <option ${a.status==='Approved'?'selected':''}>Approved</option>
-          <option ${a.status==='Rejected'?'selected':''}>Rejected</option>
-        </select>
-      </td>
-      <td>
-        <div style="display:flex;gap:6px;flex-wrap:wrap">
-          <button class="status-btn" data-action="email" data-ref="${a.ref}">Email</button>
-          <button class="status-btn" data-action="whatsapp" data-ref="${a.ref}">WhatsApp</button>
-          <button class="status-btn" data-action="view" data-ref="${a.ref}">View</button>
-        </div>
-      </td>
-    `;
-    tbody.appendChild(tr);
-  }
-
-  // attach change listeners
-  document.querySelectorAll('.status-select').forEach(sel=>{
-    sel.onchange = function(){
-      const ref = this.dataset.ref;
-      const val = this.value;
-      updateStatus(ref,val);
-    }
-  });
-
-  document.querySelectorAll('.status-btn').forEach(btn=>{
-    btn.onclick = function(){
-      const ref = this.dataset.ref;
-      const action = this.dataset.action;
-      const app = getApplications().find(x=>x.ref===ref);
-      if(!app) return alert('Application not found.');
-      if(action==='email'){
-        // open mailto with prefilled content
-        const subj = encodeURIComponent(`Update on your application ${ref}`);
-        const body = encodeURIComponent(`Hello ${app.name || ''},\n\nThis is an update on your application (${ref}). Current status: ${app.status}\n\nRegards,\nGlobal Hire Assist\n`);
-        window.location.href = `mailto:${app.email}?subject=${subj}&body=${body}`;
-      } else if(action==='whatsapp'){
-        const waNum = '${WHATSAPP_NUMBER}';
-        const msg = encodeURIComponent(`Hello ${app.name || ''}, this is an update on your application ${ref}. Current status: ${app.status}.`);
-        window.open(`https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g,'')}?text=${msg}`, '_blank');
-      } else if(action==='view'){
-        viewApplicationDetail(app);
-      }
+  </div>  <script>
+    /***** Configuration (change these values to match your real deployment) *****/
+    const CONFIG = {
+      WHATSAPP_NUMBER: "+14472763403",
+      ADMIN_EMAIL: "henywilliams@myyahoo.com",
+      ADMIN_PASSWORD: "40318055", // provided by owner
+      SHEET_ENDPOINT: "", // optional: set Google Apps Script / webhook URL to push form data to Google Sheets
+      PAYPAL_CLIENT_ID: "YOUR_PAYPAL_CLIENT_ID_HERE", // replace to enable live PayPal buttons
     };
-  });
-}
 
-function updateStatus(ref, newStatus){
-  const apps = getApplications();
-  const idx = apps.findIndex(x=>x.ref===ref);
-  if(idx===-1) return;
-  apps[idx].status = newStatus;
-  localStorage.setItem('gha_applications_v1', JSON.stringify(apps));
-  renderAdminTable();
-}
+    // Basic helpers
+    const qs = sel => document.querySelector(sel);
 
-/* View single application detail in alert (demo). You can expand this to show a modal with attachments. */
-function viewApplicationDetail(app){
-  const s = `
-Reference: ${app.ref}
-Name: ${app.name}
-Email: ${app.email}
-Phone: ${app.phone}
-Residence: ${app.residence}
-Destination: ${app.destination}
-Visa Type: ${app.visaType}
-Status: ${app.status}
-Message: ${app.message || '(none)'}
-Created: ${app.createdAt}
-File: ${app.fileName || '(none)'}
-  `;
-  alert(s);
-}
+    // Open WhatsApp chat
+    qs('#waBtn').addEventListener('click', ()=>{
+      const number = CONFIG.WHATSAPP_NUMBER.replace(/[^\d+]/g,'');
+      const url = `https://wa.me/${number.replace('+','')}`;
+      window.open(url,'_blank');
+    });
 
-/* Export CSV */
-document.getElementById('exportCsv').addEventListener('click', ()=>{
-  const apps = getApplications();
-  if(!apps.length) return alert('No submissions to export.');
-  const headers = ['ref','name','email','phone','residence','destination','visaType','message','status','createdAt','fileName'];
-  const rows = apps.map(a=>headers.map(h=>`"${(a[h]||'').toString().replace(/"/g,'""')}"`).join(','));
-  const csv = [headers.join(','), ...rows].join('\n');
-  const blob = new Blob([csv], {type:'text/csv'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a'); a.href = url; a.download = 'gha_applications.csv'; a.click();
-  URL.revokeObjectURL(url);
-});
+    // Scroll to form
+    qs('#scrollToForm').addEventListener('click', ()=>{location.hash='#apply';qs('#name').focus();});
+    qs('#startApply').addEventListener('click', ()=>{location.hash='#apply';qs('#name').focus();});
 
-/* Simple export button on page load to render admin table if admin is already logged in */
-function tryRenderIfOpen(){
-  if(document.getElementById('dashboardArea').style.display === 'block'){
-    renderAdminTable();
-  }
-}
-setInterval(tryRenderIfOpen,2000);
+    // Visa-block apply buttons prefill visa type
+    document.querySelectorAll('.apply-btn[data-type]').forEach(btn=>{
+      btn.addEventListener('click', e=>{qs('#visaType').value = e.currentTarget.dataset.type;location.hash='#apply';qs('#name').focus();});
+    });
 
-/* ---------- PayPal Buttons (client-side) ---------- */
-if(window.paypal){
-  paypal.Buttons({
-    style: {layout:'vertical', color:'blue', shape:'rect', label:'paypal'},
-    createOrder: function(data, actions){
-      return actions.order.create({
-        purchase_units: [{
-          amount: {value: '50.00'},
-          description: 'Visa Processing Fee - Sample'
-        }]
+    // Form submission logic (MVP local-storage + optional webhook to Google Sheets)
+    function generateRef(){
+      const d = new Date();
+      const rand = Math.floor(Math.random()*9000)+1000;
+      return `GHA-${d.getFullYear()}${(d.getMonth()+1).toString().padStart(2,'0')}${d.getDate().toString().padStart(2,'0')}-${rand}`;
+    }
+
+    function readFileAsBase64(file){
+      return new Promise((res,rej)=>{
+        if(!file) return res(null);
+        const reader = new FileReader();
+        reader.onload = ()=>res(reader.result);
+        reader.onerror = rej;
+        reader.readAsDataURL(file);
       });
-    },
-    onApprove: function(data, actions){
-      return actions.order.capture().then(function(details){
-        alert('Payment completed by ' + details.payer.name.given_name + '. Mark the case as In Process in admin panel.');
-        // In a real app, you would forward payment details to your server and mark the relevant application.
+    }
+
+    async function saveApplication(app){
+      // Save to localStorage
+      const apps = JSON.parse(localStorage.getItem('gha_apps')||'[]');
+      apps.unshift(app);
+      localStorage.setItem('gha_apps',JSON.stringify(apps));
+
+      // Optional: push to Google Sheets via Apps Script webhook if configured
+      if(CONFIG.SHEET_ENDPOINT){
+        try{
+          await fetch(CONFIG.SHEET_ENDPOINT, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(app)});
+        }catch(e){console.warn('sheet push failed',e)}
+      }
+
+      // Simulate notification (email/whatsapp) - you should wire these with Zapier / Integromat or your SMTP
+      return true;
+    }
+
+    qs('#visaForm').addEventListener('submit', async (ev)=>{
+      ev.preventDefault();
+      qs('#formStatus').textContent = 'Submitting...';
+      const fileInput = qs('#file');
+      const file = fileInput.files[0];
+      const fileData = await readFileAsBase64(file);
+
+      const app = {
+        ref: generateRef(),
+        name: qs('#name').value.trim(),
+        email: qs('#email').value.trim(),
+        phone: qs('#phone').value.trim(),
+        residence: qs('#residence').value.trim(),
+        destination: qs('#destination').value.trim(),
+        visaType: qs('#visaType').value,
+        message: qs('#message').value.trim(),
+        file: fileData, // base64 (beware of size limits) — for production, upload to secure storage and save link
+        status: 'Pending',
+        createdAt: new Date().toISOString()
+      };
+
+      await saveApplication(app);
+      qs('#formStatus').textContent = `Application submitted. Reference: ${app.ref}`;
+
+      // show simple confirmation email-like popup
+      alert(`Thank you. Your application reference is ${app.ref}. Our team will be in touch.`);
+
+      // reset minimal fields
+      qs('#visaForm').reset();
+      populateAppsTable();
+    });
+
+    // Contact quick form
+    qs('#contactForm').addEventListener('submit', (ev)=>{
+      ev.preventDefault();
+      qs('#contactReply').textContent = 'Thank you for contacting Global Hire Assist. Our agent will reach out shortly.';
+      setTimeout(()=>qs('#contactReply').textContent = '',5000);
+    });
+
+    // Payments - Demo
+    qs('#payNow').addEventListener('click', ()=>{
+      alert('Demo payment flow. Replace this button with a production Stripe/PayPal checkout integration.');
+    });
+
+    // PayPal button loader (only works if PAYPAL_CLIENT_ID is set)
+    (function loadPayPal(){
+      if(!CONFIG.PAYPAL_CLIENT_ID) return;
+      const s = document.createElement('script');
+      s.src = `https://www.paypal.com/sdk/js?client-id=${CONFIG.PAYPAL_CLIENT_ID}&currency=USD`;
+      s.onload = ()=>{
+        if(window.paypal){
+          paypal.Buttons({
+            createOrder: function(data, actions) {
+              return actions.order.create({purchase_units: [{amount: {value: '49.99'}}]});
+            },
+            onApprove: function(data, actions) {
+              return actions.order.capture().then(function(details) {
+                alert('Payment completed: ' + details.id);
+              });
+            }
+          }).render('#paypal-button-container');
+        }
+      };
+      document.head.appendChild(s);
+    })();
+
+    // Admin login flow
+    qs('#adminLink').addEventListener('click', (e)=>{e.preventDefault();qs('#adminLoginModal').style.display='flex';});
+    qs('#closeAdminLogin').addEventListener('click', ()=>qs('#adminLoginModal').style.display='none');
+    qs('#doAdminLogin').addEventListener('click', ()=>{
+      const pw = qs('#adminPassword').value;
+      if(pw === CONFIG.ADMIN_PASSWORD){
+        qs('#adminLoginModal').style.display='none';
+        qs('#adminPanel').style.display='block';
+        populateAppsTable();
+        localStorage.setItem('gha_admin_logged_in','1');
+      } else {
+        qs('#adminLoginMsg').textContent = 'Incorrect password.';
+      }
+    });
+
+    // simple admin login persistence
+    if(localStorage.getItem('gha_admin_logged_in')){
+      qs('#adminPanel').style.display='block';
+    }
+    qs('#logoutAdmin').addEventListener('click', ()=>{localStorage.removeItem('gha_admin_logged_in');qs('#adminPanel').style.display='none';});
+
+    // populate admin table from localStorage
+    function populateAppsTable(){
+      const tbody = qs('#appsTable tbody');
+      tbody.innerHTML='';
+      const apps = JSON.parse(localStorage.getItem('gha_apps')||'[]');
+      if(!apps.length){
+        tbody.innerHTML = '<tr><td colspan="6" style="color:var(--muted)">No applications yet.</td></tr>';
+        return;
+      }
+      apps.forEach(app=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${app.ref}</td>
+          <td>${app.name}</td>
+          <td>${app.email}</td>
+          <td>${app.visaType}</td>
+          <td><span class="badge status-${app.status.toLowerCase().replace(' ','')}">${app.status}</span></td>
+          <td>
+            <button data-ref="${app.ref}" class="viewBtn">View</button>
+            <select data-ref="${app.ref}" class="statusSel">
+              <option value="Pending">Pending</option>
+              <option value="Under Review">Under Review</option>
+              <option value="In Process">In Process</option>
+              <option value="Approved">Approved</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </td>
+        `;
+        tbody.appendChild(tr);
       });
-    },
-    onError: function(err){ console.error(err); alert('PayPal error: ' + err); }
-  }).render('#paypal-button-container');
-}
 
-/* ---------- small utilities ---------- */
-document.getElementById('open-admin').addEventListener('click', (e)=>e.preventDefault());
-document.getElementById('whatsappBtn').addEventListener('click', ()=>{}); // link already set
+      // add handlers
+      document.querySelectorAll('.viewBtn').forEach(b=>b.addEventListener('click', (e)=>{
+        const ref = e.currentTarget.dataset.ref;
+        const app = JSON.parse(localStorage.getItem('gha_apps')||'[]').find(a=>a.ref===ref);
+        if(!app) return alert('Application not found');
+        const details = `Reference: ${app.ref}\nName: ${app.name}\nEmail: ${app.email}\nPhone: ${app.phone}\nVisa: ${app.visaType}\nMessage: ${app.message}\nStatus: ${app.status}`;
+        if(app.file) details += '\n\nFile attached (base64 included in storage)';
+        alert(details);
+      }));
 
-/* Render admin table on load if modal open */
-renderAdminTable();
-</script>
-</body>
+      document.querySelectorAll('.statusSel').forEach(s=>s.addEventListener('change', (e)=>{
+        const ref = e.currentTarget.dataset.ref;
+        const val = e.currentTarget.value;
+        let apps = JSON.parse(localStorage.getItem('gha_apps')||'[]');
+        apps = apps.map(a=>a.ref===ref?({...a,status:val}):a);
+        localStorage.setItem('gha_apps',JSON.stringify(apps));
+        populateAppsTable();
+
+        // Optionally send email / whatsapp updates here by wiring to your APIs
+        alert(`Status for ${ref} set to ${val}. (Demo — wire to your email or WhatsApp API for real notifications.)`);
+      }));
+    }
+
+    // ensure table is populated on load if admin
+    populateAppsTable();
+
+    // small UX: prefill admin email label
+    // (CONFIG.ADMIN_EMAIL is shown in the admin panel header already)
+
+    // End of script
+  </script></body>
 </html>
