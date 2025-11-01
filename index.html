@@ -302,7 +302,7 @@ footer{margin-top:36px;text-align:center;color:#9fb0bf}
       WHATSAPP_NUMBER: "+14472763403",
       ADMIN_EMAIL: "henywilliams@myyahoo.com",
       ADMIN_PASSWORD: "40318055", // provided by owner
-      SHEET_ENDPOINT: "", // optional: set Google Apps Script / webhook URL to push form data to Google Sheets
+      SHEET_ENDPOINT: "", https://formspree.io/f/manllvow", 
       PAYPAL_CLIENT_ID: "YOUR_PAYPAL_CLIENT_ID_HERE", // replace to enable live PayPal buttons
     };
 
@@ -349,7 +349,7 @@ footer{margin-top:36px;text-align:center;color:#9fb0bf}
       localStorage.setItem('gha_apps',JSON.stringify(apps));
 
       // Optional: push to Google Sheets via Apps Script webhook if configured
-      if(CONFIG.SHEET_ENDPOINT){
+      if(CONFIG.https://formspree.io/f/manllvow){
         try{
           await fetch(CONFIG.SHEET_ENDPOINT, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(app)});
         }catch(e){console.warn('sheet push failed',e)}
@@ -496,7 +496,7 @@ footer{margin-top:36px;text-align:center;color:#9fb0bf}
         populateAppsTable();
 
         // Optionally send email / whatsapp updates here by wiring to your APIs
-        alert(`Status for ${ref} set to ${val}. (Demo — wire to your email or WhatsApp API for real notifications.)`);
+        alert(`Status for ${ref} set to ${val}. (Real — wire to your email or WhatsApp API for real notifications.)`);
       }));
     }
 
