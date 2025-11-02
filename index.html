@@ -1,511 +1,511 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <title>Global Hire Assist | Your Trusted Visa Partner</title>
+  <meta name="description" content="Global Hire Assist provides visa consultancy and recruitment support with seamless applications and payments." />
+  <meta property="og:title" content="Global Hire Assist" />
+  <meta property="og:description" content="Your Trusted Visa Partner" />
+  <meta property="og:image" content="/images/hero-4k.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Global Hire Assist — Your Trusted Visa Partner</title>
-  <meta name="description" content="Global Hire Assist — fast, professional visa help for work, study, tourist & sponsorship visas." />
+  <link rel="icon" href="/favicon.ico" />
   <style>
-    :root{
-      --navy:#001f3f; /* primary site background */
-      --accent:#00b894;
-      --muted:#d1d5db;
-      --card:#072235;
-      --white:#ffffff;
-      --glass: rgba(255,255,255,0.06);
-    }
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--muted);background:var(--navy);}
-    .container{max-width:1100px;margin:0 auto;padding:28px;}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .logo{display:flex;align-items:center;gap:12px}
-    .brand-mark{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#1398d6);display:flex;align-items:center;justify-content:center;color:#001f3f;font-weight:700}
-    h1,h2,h3{color:var(--white);margin:0}
-    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:26px}
-    .hero-card{background:var(--card);padding:28px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.45)}
-    .cta{display:inline-block;padding:12px 18px;background:var(--accent);color:#001f3f;border-radius:8px;font-weight:600;border:none;cursor:pointer}
-    .services{display:flex;gap:14px;margin-top:18px}
-    .service{flex:1;background:rgba(255,255,255,0.03);padding:16px;border-radius:10px}
-    .grid-4{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}/* Visa type blocks with 4k background images */
-.visa-block{position:relative;border-radius:10px;overflow:hidden;min-height:180px;color:#fff}
-.visa-block .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.35),rgba(0,0,0,0.55));padding:18px;display:flex;flex-direction:column;justify-content:flex-end}
-.visa-block .title{font-size:20px;margin-bottom:8px}
-.apply-btn{padding:10px 14px;background:var(--accent);color:#001f3f;border-radius:8px;border:none;cursor:pointer}
-
-/* form styles */
-form label{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
-input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white);box-sizing:border-box}
-.small{font-size:13px;color:#9fb0bf}
-
-/* admin panel */
-#adminPanel{display:none;background:#000;color:var(--muted);padding:20px;border-radius:8px}
-.table{width:100%;border-collapse:collapse}
-.table th,.table td{border-bottom:1px solid rgba(255,255,255,0.04);padding:10px;text-align:left}
-.badge{display:inline-block;padding:6px 8px;border-radius:8px}
-.status-pending{background:#f39c12;color:#000}
-.status-review{background:#3498db;color:#000}
-.status-approved{background:#2ecc71;color:#000}
-.status-rejected{background:#e74c3c;color:#000}
-
-footer{margin-top:36px;text-align:center;color:#9fb0bf}
-
-/* small screens */
-@media(max-width:900px){.hero{grid-template-columns:1fr}.container{padding:18px}}
-
+    /* Minimal inline styles; you can replace with a CSS file or Tailwind if desired */
+    :root { --blue:#0b2a4a; --bg:#f6f8fb; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; background:var(--bg); color:#0a1a2a; }
+    header { display:flex; justify-content:space-between; align-items:center; padding:20px; }
+    nav a { margin:0 12px; text-decoration:none; color:#0a1a2a; }
+    .hero { position:relative; height:60vh; min-height:320px; overflow:hidden; }
+    .hero img { width:100%; height:100%; object-fit:cover; object-position:center; }
+    .hero .overlay { position:absolute; inset:0; background: rgba(11,42,74,0.35); }
+    .hero-content { position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); color:white; text-align:center; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); margin:0 0 0.5rem; }
+    p { font-size:1.1rem; }
+    .cta { background:#0b5bd3; color:white; padding:12px 20px; border-radius:6px; text-decoration:none; display:inline-block; margin-top:12px; }
+    .container { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <div class="brand-mark">G</div>
-        <div>
-          <div style="font-weight:700;color:var(--white)">Global Hire Assist</div>
-          <div style="font-size:13px;color:var(--muted)">Your Trusted Visa Partner</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#apply">Apply</a>
-        <a href="#payments">Payments</a>
-        <a href="#contact">Contact</a>
-        <a href="#admin" id="adminLink">Consultant Panel</a>
-      </nav>
-    </header><main>
-  <section class="hero" id="home">
-    <div>
-      <h1>Fast. Professional. Real.</h1>
-      <p style="color:var(--muted);margin-top:12px">We help individuals and families with Work, Study, Tourist visas and Sponsorships. Start your application and let our consultants guide you every step of the way.</p>
-
-      <div style="margin-top:18px">
-        <button class="cta" id="startApply">Start Application</button>
-      </div>
-
-      <div class="services">
-        <div class="service">
-          <strong>Work Visa</strong>
-          <div class="small">Employer matching, documentation, interview prep</div>
-        </div>
-        <div class="service">
-          <strong>Study Visa</strong>
-          <div class="small">College admissions support & visa processing</div>
-        </div>
-        <div class="service">
-          <strong>Tourist Visa</strong>
-          <div class="small">Fast tourist paperwork & travel guidance</div>
-        </div>
-        <div class="service">
-          <strong>Sponsorships</strong>
-          <div class="small">Family & employer sponsorship assistance</div>
-        </div>
-      </div>
-
+  <header aria-label="Site header">
+    <div class="brand" style="display:flex;gap:12px;align-items:center;">
+      <img src="/images/logo.png" alt="Global Hire Assist Logo" height="40" />
+      <strong>Global Hire Assist</strong>
     </div>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </header>
 
-    <aside class="hero-card">
-      <h3 style="margin-bottom:6px">Apply Today</h3>
-      <p class="small">Fill the form & upload passport/supporting docs. We'll assign a reference number and notify you.</p>
-
-      <div style="margin-top:12px">
-        <button class="cta" id="scrollToForm">Go to Form</button>
-      </div>
-
-      <hr style="border:0;border-top:1px solid rgba(255,255,255,0.04);margin:18px 0">
-
-      <div style="display:flex;gap:12px;align-items:center">
-        <div style="flex:1">
-          <div style="font-size:13px;color:var(--muted)">WhatsApp</div>
-          <div style="font-weight:700">+1 447-276-3403</div>
-        </div>
-        <div>
-          <button class="apply-btn" id="waBtn">Chat on WhatsApp</button>
-        </div>
-      </div>
-    </aside>
-  </section>
-
-  <!-- Visa Type blocks with 4K background placeholders -->
-  <section style="margin-top:20px">
-    <div class="grid-4">
-      <div class="visa-block" style="background-image:url('https://images.unsplash.com/photo-1502920917128-1aa500764b0f?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center">
-        <div class="overlay">
-          <div class="title">Work Visa</div>
-          <div>Skilled professionals & employer-sponsored programs</div>
-          <div style="margin-top:10px"><button class="apply-btn" data-type="Work">Apply</button></div>
-        </div>
-      </div>
-
-      <div class="visa-block" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center">
-        <div class="overlay">
-          <div class="title">Study Visa</div>
-          <div>University & college application support</div>
-          <div style="margin-top:10px"><button class="apply-btn" data-type="Study">Apply</button></div>
-        </div>
-      </div>
-
-      <div class="visa-block" style="background-image:url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center">
-        <div class="overlay">
-          <div class="title">Tourist Visa</div>
-          <div>Short stays & visitor guidance</div>
-          <div style="margin-top:10px"><button class="apply-btn" data-type="Tourist">Apply</button></div>
-        </div>
-      </div>
-
-      <div class="visa-block" style="background-image:url('https://images.unsplash.com/photo-1526948531390-3fdf0cf4c5f6?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center">
-        <div class="overlay">
-          <div class="title">Sponsorship</div>
-          <div>Family & employer sponsorship pathways</div>
-          <div style="margin-top:10px"><button class="apply-btn" data-type="Sponsorship">Apply</button></div>
-        </div>
-      </div>
+  <section class="hero" role="img" aria-label="Travel and visa themed backdrop">
+    <img src="/images/hero-4k.jpg" srcset="/images/hero-4k.jpg 1x, /images/hero-4k@2x.jpg 2x" alt="Travel passport visa concept" loading="lazy" />
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1>Your Trusted Visa Partner</h1>
+      <p>We simplify visa consultancy and recruitment so you can focus on opportunities worldwide.</p>
+      <a class="cta" href="/signup.html">Start Application</a>
     </div>
   </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up - Global Hire Assist</title>
+  <meta name="description" content="Create your account to start your visa application." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background:#f7f9fc; }
+    form { max-width: 420px; margin: 0 auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.05); }
+    label { display:block; margin:12px 0 6px; }
+    input { width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; }
+    button { margin-top:12px; padding:10px 16px; border:none; border-radius:6px; background:#0b5bd3; color:white; }
+  </style>
+</head>
+<body>
+  <h1>Create your account</h1>
+  <form id="signupForm" action="/auth/signup" method="POST">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required />
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required minlength="6" />
+    <button type="submit">Sign Up</button>
+  </form>
 
-  <!-- Application form -->
-  <section id="apply" style="margin-top:22px">
-    <div class="hero-card">
-      <h2>Visa Application Form</h2>
-      <p class="small">Complete the form below and attach a passport page or supporting documents (PDF/JPEG). We will generate a reference number instantly.</p>
+  <p>Already have an account? <a href="/login.html">Log in</a></p>
 
-      <form id="visaForm" enctype="multipart/form-data" autocomplete="off">
-        <label for="name">Full name</label>
-        <input id="name" name="name" type="text" required />
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
-
-        <label for="phone">Phone</label>
-        <input id="phone" name="phone" type="tel" required />
-
-        <label for="residence">Country of Residence</label>
-        <input id="residence" name="residence" type="text" required />
-
-        <label for="destination">Destination Country</label>
-        <input id="destination" name="destination" type="text" required />
-
-        <label for="visaType">Visa Type</label>
-        <select id="visaType" name="visaType" required>
-          <option value="Work">Work</option>
-          <option value="Study">Study</option>
-          <option value="Tourist">Tourist</option>
-          <option value="Sponsorship">Sponsorship</option>
-        </select>
-
-        <label for="message">Message / Notes</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-
-        <label for="file">Upload passport / supporting docs (PDF or JPEG)</label>
-        <input id="file" name="file" type="file" accept="application/pdf,image/*" />
-
-        <div style="margin-top:12px;display:flex;gap:12px;align-items:center">
-          <button class="cta" type="submit">Submit Application</button>
-          <div id="formStatus" class="small"></div>
-        </div>
-      </form>
-
-      <div style="margin-top:12px;font-size:13px;color:#9fb0bf">Note: Uploaded files are stored locally in this demo. To save to Google Sheets or a secure admin dashboard, follow the instructions included in the comments at the top of the file.</div>
-    </div>
-  </section>
-
-  <!-- Payments -->
-  <section id="payments" style="margin-top:18px">
-    <div class="hero-card">
-      <h2>Payments & Fees</h2>
-      <p class="small">Select a method or follow the instructions. Replace the placeholder client IDs and endpoints with your real merchant credentials to accept live payments.</p>
-
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <div style="flex:1;min-width:220px">
-          <strong>PayPal (recommended)</strong>
-          <p class="small">Click to pay via PayPal or card. (Requires PayPal client-id in the script below.)</p>
-          <div id="paypal-button-container"></div>
-        </div>
-
-        <div style="flex:1;min-width:220px">
-          <strong>Card (Visa / MasterCard / Debit)</strong>
-          <p class="small">You can integrate Stripe Checkout or your chosen gateway. Use the "Pay Now" button to test the flow in demo mode.</p>
-          <button class="apply-btn" id="payNow">Pay Now (Demo)</button>
-        </div>
-
-        <div style="flex:1;min-width:220px">
-          <strong>Western Union / Manual</strong>
-          <p class="small">Instructions: Send funds to the company account as instructed after contacting our office. Provide transaction ID in the Admin Panel when you pay manually.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Chat / Contact -->
-  <section id="contact" style="margin-top:18px">
-    <div class="hero-card">
-      <h2>Contact / Quick Inquiry</h2>
-      <p class="small">Quick message or use the WhatsApp button for immediate chat. Auto-reply will be shown once a message is sent.</p>
-
-      <form id="contactForm">
-        <label for="cname">Name</label>
-        <input id="cname" name="cname" type="text" required />
-        <label for="cmsg">Message</label>
-        <textarea id="cmsg" name="cmsg" rows="3" required></textarea>
-        <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
-          <button class="cta" type="submit">Send</button>
-          <div id="contactReply" class="small"></div>
-        </div>
-      </form>
-
-    </div>
-  </section>
-
-  <!-- Admin Panel -->
-  <section id="admin" style="margin-top:22px">
-    <div id="adminPanel" class="hero-card">
-      <h2>Consultant Panel</h2>
-      <div style="font-size:13px;color:var(--muted);margin-bottom:10px">Admin: henywilliams@myyahoo.com</div>
-
-      <div id="adminContent">
-        <div style="margin-bottom:10px">
-          <button id="logoutAdmin" class="apply-btn">Logout</button>
-        </div>
-
-        <table class="table" id="appsTable">
-          <thead>
-            <tr><th>Ref</th><th>Name</th><th>Email</th><th>Visa</th><th>Status</th><th>Actions</th></tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-
-        <div style="margin-top:12px;color:var(--muted);font-size:13px">Click an application to view details and mark status. You may also paste a payment transaction ID to mark "In Process".</div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div>© Global Hire Assist</div>
-    <div style="font-size:13px;color:var(--muted)">Built as an MVP — replace the demo endpoints with your production services to go live.</div>
-  </footer>
-
-</main>
-
-  </div>  <!-- Admin login modal (simple) -->  <div id="adminLoginModal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6)">
-    <div style="background:#000;padding:20px;border-radius:8px;width:360px;color:var(--muted)">
-      <h3 style="color:var(--white)">Admin Login</h3>
-      <div style="font-size:13px;margin-bottom:10px">Enter password to access consultant panel.</div>
-      <input id="adminPassword" type="password" style="width:100%;padding:10px;border-radius:6px;background:#071018;border:1px solid rgba(255,255,255,0.03);color:var(--white)" />
-      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
-        <button id="closeAdminLogin" class="small">Close</button>
-        <button id="doAdminLogin" class="apply-btn">Login</button>
-      </div>
-      <div id="adminLoginMsg" style="margin-top:8px;font-size:13px;color:#f39c12"></div>
-    </div>
-  </div>  <script>
-    /***** Configuration (change these values to match your real deployment) *****/
-    const CONFIG = {
-      WHATSAPP_NUMBER: "+14472763403",
-      ADMIN_EMAIL: "henywilliams@myyahoo.com",
-      ADMIN_PASSWORD: "40318055", // provided by owner
-      SHEET_ENDPOINT: "", https://formspree.io/f/manllvow", 
-      PAYPAL_CLIENT_ID: "YOUR_PAYPAL_CLIENT_ID_HERE", // replace to enable live PayPal buttons
-    };
-
-    // Basic helpers
-    const qs = sel => document.querySelector(sel);
-
-    // Open WhatsApp chat
-    qs('#waBtn').addEventListener('click', ()=>{
-      const number = CONFIG.WHATSAPP_NUMBER.replace(/[^\d+]/g,'');
-      const url = `https://wa.me/${number.replace('+','')}`;
-      window.open(url,'_blank');
-    });
-
-    // Scroll to form
-    qs('#scrollToForm').addEventListener('click', ()=>{location.hash='#apply';qs('#name').focus();});
-    qs('#startApply').addEventListener('click', ()=>{location.hash='#apply';qs('#name').focus();});
-
-    // Visa-block apply buttons prefill visa type
-    document.querySelectorAll('.apply-btn[data-type]').forEach(btn=>{
-      btn.addEventListener('click', e=>{qs('#visaType').value = e.currentTarget.dataset.type;location.hash='#apply';qs('#name').focus();});
-    });
-
-    // Form submission logic (MVP local-storage + optional webhook to Google Sheets)
-    function generateRef(){
-      const d = new Date();
-      const rand = Math.floor(Math.random()*9000)+1000;
-      return `GHA-${d.getFullYear()}${(d.getMonth()+1).toString().padStart(2,'0')}${d.getDate().toString().padStart(2,'0')}-${rand}`;
-    }
-
-    function readFileAsBase64(file){
-      return new Promise((res,rej)=>{
-        if(!file) return res(null);
-        const reader = new FileReader();
-        reader.onload = ()=>res(reader.result);
-        reader.onerror = rej;
-        reader.readAsDataURL(file);
-      });
-    }
-
-    async function saveApplication(app){
-      // Save to localStorage
-      const apps = JSON.parse(localStorage.getItem('gha_apps')||'[]');
-      apps.unshift(app);
-      localStorage.setItem('gha_apps',JSON.stringify(apps));
-
-      // Optional: push to Google Sheets via Apps Script webhook if configured
-      if(CONFIG.https://formspree.io/f/manllvow){
-        try{
-          await fetch(CONFIG.SHEET_ENDPOINT, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(app)});
-        }catch(e){console.warn('sheet push failed',e)}
-      }
-
-      // Simulate notification (email/whatsapp) - you should wire these with Zapier / Integromat or your SMTP
-      return true;
-    }
-
-    qs('#visaForm').addEventListener('submit', async (ev)=>{
-      ev.preventDefault();
-      qs('#formStatus').textContent = 'Submitting...';
-      const fileInput = qs('#file');
-      const file = fileInput.files[0];
-      const fileData = await readFileAsBase64(file);
-
-      const app = {
-        ref: generateRef(),
-        name: qs('#name').value.trim(),
-        email: qs('#email').value.trim(),
-        phone: qs('#phone').value.trim(),
-        residence: qs('#residence').value.trim(),
-        destination: qs('#destination').value.trim(),
-        visaType: qs('#visaType').value,
-        message: qs('#message').value.trim(),
-        file: fileData, // base64 (beware of size limits) — for production, upload to secure storage and save link
-        status: 'Pending',
-        createdAt: new Date().toISOString()
-      };
-
-      await saveApplication(app);
-      qs('#formStatus').textContent = `Application submitted. Reference: ${app.ref}`;
-
-      // show simple confirmation email-like popup
-      alert(`Thank you. Your application reference is ${app.ref}. Our team will be in touch.`);
-
-      // reset minimal fields
-      qs('#visaForm').reset();
-      populateAppsTable();
-    });
-
-    // Contact quick form
-    qs('#contactForm').addEventListener('submit', (ev)=>{
-      ev.preventDefault();
-      qs('#contactReply').textContent = 'Thank you for contacting Global Hire Assist. Our agent will reach out shortly.';
-      setTimeout(()=>qs('#contactReply').textContent = '',5000);
-    });
-
-    // Payments - Demo
-    qs('#payNow').addEventListener('click', ()=>{
-      alert('Demo payment flow. Replace this button with a production Stripe/PayPal checkout integration.');
-    });
-
-    // PayPal button loader (only works if PAYPAL_CLIENT_ID is set)
-    (function loadPayPal(){
-      if(!CONFIG.PAYPAL_CLIENT_ID) return;
-      const s = document.createElement('script');
-      s.src = `https://www.paypal.com/sdk/js?client-id=${CONFIG.PAYPAL_CLIENT_ID}&currency=USD`;
-      s.onload = ()=>{
-        if(window.paypal){
-          paypal.Buttons({
-            createOrder: function(data, actions) {
-              return actions.order.create({purchase_units: [{amount: {value: '49.99'}}]});
-            },
-            onApprove: function(data, actions) {
-              return actions.order.capture().then(function(details) {
-                alert('Payment completed: ' + details.id);
-              });
-            }
-          }).render('#paypal-button-container');
-        }
-      };
-      document.head.appendChild(s);
-    })();
-
-    // Admin login flow
-    qs('#adminLink').addEventListener('click', (e)=>{e.preventDefault();qs('#adminLoginModal').style.display='flex';});
-    qs('#closeAdminLogin').addEventListener('click', ()=>qs('#adminLoginModal').style.display='none');
-    qs('#doAdminLogin').addEventListener('click', ()=>{
-      const pw = qs('#adminPassword').value;
-      if(pw === CONFIG.ADMIN_PASSWORD){
-        qs('#adminLoginModal').style.display='none';
-        qs('#adminPanel').style.display='block';
-        populateAppsTable();
-        localStorage.setItem('gha_admin_logged_in','1');
-      } else {
-        qs('#adminLoginMsg').textContent = 'Incorrect password.';
+  <script>
+    // Optional basic client-side validation
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      if (!email.includes('@') || pass.length < 6) {
+        e.preventDefault();
+        alert('Please provide a valid email and a password of at least 6 characters.');
       }
     });
-
-    // simple admin login persistence
-    if(localStorage.getItem('gha_admin_logged_in')){
-      qs('#adminPanel').style.display='block';
-    }
-    qs('#logoutAdmin').addEventListener('click', ()=>{localStorage.removeItem('gha_admin_logged_in');qs('#adminPanel').style.display='none';});
-
-    // populate admin table from localStorage
-    function populateAppsTable(){
-      const tbody = qs('#appsTable tbody');
-      tbody.innerHTML='';
-      const apps = JSON.parse(localStorage.getItem('gha_apps')||'[]');
-      if(!apps.length){
-        tbody.innerHTML = '<tr><td colspan="6" style="color:var(--muted)">No applications yet.</td></tr>';
-        return;
-      }
-      apps.forEach(app=>{
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${app.ref}</td>
-          <td>${app.name}</td>
-          <td>${app.email}</td>
-          <td>${app.visaType}</td>
-          <td><span class="badge status-${app.status.toLowerCase().replace(' ','')}">${app.status}</span></td>
-          <td>
-            <button data-ref="${app.ref}" class="viewBtn">View</button>
-            <select data-ref="${app.ref}" class="statusSel">
-              <option value="Pending">Pending</option>
-              <option value="Under Review">Under Review</option>
-              <option value="In Process">In Process</option>
-              <option value="Approved">Approved</option>
-              <option value="Rejected">Rejected</option>
-            </select>
-          </td>
-        `;
-        tbody.appendChild(tr);
-      });
-
-      // add handlers
-      document.querySelectorAll('.viewBtn').forEach(b=>b.addEventListener('click', (e)=>{
-        const ref = e.currentTarget.dataset.ref;
-        const app = JSON.parse(localStorage.getItem('gha_apps')||'[]').find(a=>a.ref===ref);
-        if(!app) return alert('Application not found');
-        const details = `Reference: ${app.ref}\nName: ${app.name}\nEmail: ${app.email}\nPhone: ${app.phone}\nVisa: ${app.visaType}\nMessage: ${app.message}\nStatus: ${app.status}`;
-        if(app.file) details += '\n\nFile attached (base64 included in storage)';
-        alert(details);
-      }));
-
-      document.querySelectorAll('.statusSel').forEach(s=>s.addEventListener('change', (e)=>{
-        const ref = e.currentTarget.dataset.ref;
-        const val = e.currentTarget.value;
-        let apps = JSON.parse(localStorage.getItem('gha_apps')||'[]');
-        apps = apps.map(a=>a.ref===ref?({...a,status:val}):a);
-        localStorage.setItem('gha_apps',JSON.stringify(apps));
-        populateAppsTable();
-
-        // Optionally send email / whatsapp updates here by wiring to your APIs
-        alert(`Status for ${ref} set to ${val}. (Real — wire to your email or WhatsApp API for real notifications.)`);
-      }));
-    }
-
-    // ensure table is populated on load if admin
-    populateAppsTable();
-
-    // small UX: prefill admin email label
-    // (CONFIG.ADMIN_EMAIL is shown in the admin panel header already)
-
-    // End of script
-  </script></body>
+  </script>
+</body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up - Global Hire Assist</title>
+  <meta name="description" content="Create your account to start your visa application." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background:#f7f9fc; }
+    form { max-width: 420px; margin: 0 auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.05); }
+    label { display:block; margin:12px 0 6px; }
+    input { width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; }
+    button { margin-top:12px; padding:10px 16px; border:none; border-radius:6px; background:#0b5bd3; color:white; }
+  </style>
+</head>
+<body>
+  <h1>Create your account</h1>
+  <form id="signupForm" action="/auth/signup" method="POST">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required />
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required minlength="6" />
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <p>Already have an account? <a href="/login.html">Log in</a></p>
+
+  <script>
+    // Optional basic client-side validation
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+      if (!email.includes('@') || pass.length < 6) {
+        e.preventDefault();
+        alert('Please provide a valid email and a password of at least 6 characters.');
+      }
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Global Hire Assist</title>
+  <meta name="description" content="Sign in to access your applicant dashboard." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background:#f7f9fc; }
+    form { max-width: 420px; margin: 0 auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.05); }
+    label { display:block; margin:12px 0 6px; }
+    input { width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; }
+    button { margin-top:12px; padding:10px 16px; border:none; border-radius:6px; background:#0b5bd3; color:white; }
+  </style>
+</head>
+<body>
+  <h1>Welcome back</h1>
+  <form id="loginForm" action="/auth/login" method="POST">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required />
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required />
+    <button type="submit">Log In</button>
+  </form>
+
+  <p><a href="/forgot-password.html">Forgot password?</a></p>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      const email = document.getElementById('email').value;
+      if (!email.includes('@')) {
+        e.preventDefault();
+        alert('Enter a valid email.');
+      }
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payments - Global Hire Assist</title>
+  <meta name="description" content="Pay your visa service fee via Stripe Checkout." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; background:#f7f9fc; }
+    .card { max-width:600px; margin:0 auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.05); }
+    button { padding:12px 20px; border:none; border-radius:6px; background:#0b5bd3; color:white; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Visa Service Fee</h2>
+    <p>Secure, card-enabled checkout via Stripe.</p>
+    <button id="checkoutBtn">Pay with Card</button>
+
+    <hr/>
+
+    <h3>Manual Payment (Western Union)</h3>
+    <p>Upload receipt (stub for MVP).</p>
+    <input type="file" id="wireReceipt" />
+    <button id="uploadReceipt">Upload Receipt</button>
+  </div>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    // Replace with your actual publishable key; in MVP you can use the test key
+    const stripe = Stripe('pk_test_51SP8qwQ1YU5b37vuU8sDX0cj6rVmztxsXX54g1rYrTFXqMfCkqTAIsxc6nWx7jN9AZh7Obyda5F72oM1yRxDEKhz00dRnjR2eu');
+    document.getElementById('checkoutBtn').addEventListener('click', async () => {
+      const res = await fetch('/payments/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ applicantId: 'demo-applicant', item: 'Visa Service Fee', amount: 5000 })
+      });
+      const data = await res.json();
+      if (data.id) {
+        const result = await stripe.redirectToCheckout({ sessionId: data.id });
+        if (result.error) alert(result.error.message);
+      } else {
+        alert('Unable to create checkout session.');
+      }
+    });
+
+    document.getElementById('uploadReceipt').addEventListener('click', async () => {
+      // Stub: in a real app, upload via S3 presigned or FormData submit
+      alert('Receipt upload is a placeholder in this MVP.');
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - Global Hire Assist</title>
+  <meta name="description" content="Your applicant dashboard with status and receipts." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; background:#f7f9fc; }
+    .card { background:#fff; padding:16px; border-radius:8px; margin-bottom:12px; box-shadow:0 1px 6px rgba(0,0,0,.05); }
+  </style>
+</head>
+<body>
+  <h1>Applicant Dashboard</h1>
+
+  <section id="profile" class="card" aria-label="Profile">
+    <h2>Profile</h2>
+    <p>Email: placeholder@example.com</p>
+  </section>
+
+  <section id="applications" class="card" aria-label="Applications">
+    <h2>Applications</h2>
+    <ul id="appsList">
+      <li>Passport & travel docs — Status: Draft</li>
+      <li>Visa application — Status: Under Review</li>
+    </ul>
+  </section>
+
+  <section id="payments" class="card" aria-label="Payments">
+    <h2>Payments</h2>
+    <p>Last payment: Visa Service Fee — Status: Pending</p>
+    <a href="/payments.html" class="cta">Open Checkout</a>
+  </section>
+
+  <section class="card" aria-label="Support">
+    <h2>Need Help?</h2>
+    <a href="https://wa.me/14472763403?text=Hi%20GlobalHire%20Assist%2C%20I%27d%20like%20help" target="_blank" rel="noopener">Chat with Support via WhatsApp</a>
+  </section>
+
+  <script>
+    // In a full app, fetch protected data from /dashboard/data with auth
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Terms & Conditions - Global Hire Assist</title>
+  <meta name="description" content="Service terms, data policy, refunds." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+</head>
+<body>
+  <h1>Terms & Conditions</h1>
+  <section aria-label="Service terms">
+    <h2>Services</h2>
+    <p>Global Hire Assist provides visa consultancy and recruitment support...</p>
+  </section>
+  <section aria-label="Data policy">
+    <h2>Data Use & Privacy</h2>
+    <p>We collect minimal data with explicit consent. Data is encrypted at rest...</p>
+  </section>
+  <section aria-label="Refunds">
+    <h2>Refunds</h2>
+    <p>Refund policy details...</p>
+  </section>
+  <section aria-label="Disclaimers">
+    <h2>Disclaimers</h2>
+    <p>Copy suitable for legal review; replace with counsel-approved text.</p>
+  </section>
+</body>
+</html>
+- hero-4k.jpg (or any high-res image)
+- logo.png, logo.svg
+- favicon.ico
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import authRouter from './routes/auth.js';
+import paymentsRouter from './routes/payments.js';
+import formRouter from './routes/form.js';
+import webhookRouter from './routes/webhook.js';
+import dashboardRouter from './routes/dashboard.js';
+
+dotenv.config();
+const app = express();
+
+app.use(cors({ origin: true, credentials: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+app.use('/auth', authRouter);
+app.use('/payments', paymentsRouter);
+app.use('/form', formRouter);
+app.use('/webhook', webhookRouter);
+app.use('/dashboard', dashboardRouter);
+
+const PORT = process.env.PORT || 5050;
+app.listen(PORT, () => {
+  console.log(`Global Hire Assist API listening on port ${PORT}`);
+});
+import express from 'express';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import { v4 as uuidv4 } from 'uuid';
+
+const router = express.Router();
+const users = new Map();
+const JWT_EXPIRES_IN = '24h';
+const COOKIE_NAME = 'gh_jwt';
+
+function generateToken(payload) {
+  return jwt.sign(payload, process.env.JWT_SECRET || 'secret', { expiresIn: JWT_EXPIRES_IN });
+}
+
+router.post('/signup', async (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) return res.status(400).json({ error: 'Missing fields' });
+  if (users.has(email)) return res.status(400).json({ error: 'User exists' });
+
+  const hash = await bcrypt.hash(password, 10);
+  const user = { id: uuidv4(), email, passwordHash: hash, createdAt: Date.now() };
+  users.set(email, user);
+
+  const token = generateToken({ userId: user.id, email: user.email });
+  res.cookie(COOKIE_NAME, token, { httpOnly: true, secure: true, sameSite: 'lax' });
+  res.json({ ok: true, user: { id: user.id, email: user.email } });
+});
+
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  const user = users.get(email);
+  if (!user) return res.status(401).json({ error: 'Invalid credentials' });
+  const match = await bcrypt.compare(password, user.passwordHash);
+  if (!match) return res.status(401).json({ error: 'Invalid credentials' });
+
+  const token = generateToken({ userId: user.id, email: user.email });
+  res.cookie(COOKIE_NAME, token, { httpOnly: true, secure: true, sameSite: 'lax' });
+  res.json({ ok: true, user: { id: user.id, email: user.email } });
+});
+
+router.post('/forgot-password', (req, res) => {
+  res.json({ ok: true, message: 'Password reset link would be sent if SMTP configured.' });
+});
+
+export default router;
+import express from 'express';
+import Stripe from 'stripe';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const router = express.Router();
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+
+router.post('/create-checkout-session', async (req, res) => {
+  try {
+    const { applicantId, item = 'Visa Service Fee', amount } = req.body;
+    if (!applicantId || !amount) return res.status(400).json({ error: 'Invalid payload' });
+
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [{
+        price_data: {
+          currency: 'usd',
+          product_data: { name: item },
+          unit_amount: Math.round(Number(amount)),
+        },
+        quantity: 1,
+      }],
+      mode: 'payment',
+      success_url: `${process.env.APP_BASE_URL}/payments-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.APP_BASE_URL}/payments?cancel=true`,
+      metadata: { applicantId, item, amount },
+    });
+
+    res.json({ id: session.id });
+  } catch (err) {
+    console.error('Checkout session error:', err);
+    res.status(500).json({ error: 'Unable to create checkout session' });
+  }
+});
+
+// Webhook
+import bodyParser from 'body-parser';
+const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+router.post('/webhook', bodyParser.raw({ type: 'application/json' }), (req, res) => {
+  const sig = req.headers['stripe-signature'];
+  let event;
+  try {
+    event = Stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
+  } catch (err) {
+    console.error('Webhook signature verification failed:', err.message);
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    const { applicantId, item, amount } = session.metadata;
+    // Persist payment status to DB in production
+    console.log(`Payment completed for ${applicantId} - ${item} - ${amount} (${session.id})`);
+  }
+
+  res.status(200).json({ received: true });
+});
+
+export default router;
+import express from 'express';
+const router = express.Router();
+
+router.get('/redirect', (req, res) => {
+  res.redirect('https://formspree.io/f/manllvow');
+});
+
+router.post('/fallback', (req, res) => {
+  res.json({ ok: true, message: 'Form fallback received' });
+});
+
+export default router;
+import express from 'express';
+import jwt from 'jsonwebtoken';
+const router = express.Router();
+
+const SECRET = process.env.JWT_SECRET || 'secret';
+function authGuard(req, res, next) {
+  const token = req.cookies?.gh_jwt;
+  if (!token) return res.status(401).json({ error: 'Unauthorized' });
+  try {
+    jwt.verify(token, SECRET);
+    next();
+  } catch {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+}
+
+router.get('/data', authGuard, (req, res) => {
+  res.json({
+    profile: { email: 'user@example.com', name: 'Applicant' },
+    applications: [
+      { id: 'APP-001', status: 'Draft' },
+      { id: 'APP-002', status: 'Under Review' },
+    ],
+    payments: [
+      { id: 'PAY-001', status: 'Pending', amount: 5000 },
+    ],
+  });
+});
+
+export default router;
+PORT=5050
+APP_BASE_URL=https://www.globalhireassist.com
+JWT_SECRET=your_jwt_secret
+STRIPE_PUBLISHABLE_KEY=pk_test_51SP8qw...
+STRIPE_SECRET_KEY=sk_test_51SP8qw...
+STRIPE_WEBHOOK_SECRET=whsec_...
+FORMSPREE_ENDPOINT=https://formspree.io/f/manllvow
+DATABASE_URL=sqlite:///db.sqlite
+{
+  "name": "globalhireassist-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "stripe": "^8.406.0",
+    "sqlite3": "^5.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
+
+
